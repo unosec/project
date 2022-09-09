@@ -70,7 +70,7 @@ Security History
 
 Project Planning and Reflection
 -
-Team 2 meets every Tuesday night at 5:30pm CT.  Josh is serving as the team lead, and the other team members are acting in whatever other role is needed to complete the given tasks and move the project forward.
+Team 2 meets every Tuesday night at 5:30pm CT.  Josh is serving as the team lead, and the other team members are acting in whatever other role is needed to complete the given tasks and move the project forward.  Note that all team members contributed to various parts of this documentation and were gathered in the team discord channel, however many of the GitHub changes may be attributed to Jim simply because he compiled the documentation.
 
 
 
