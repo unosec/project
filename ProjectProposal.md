@@ -4,8 +4,8 @@ Team 2 - Fall 2022
 
 Systems Engineering View
 -
-placeholder
 
+![System Engineering View](https://github.com/unosec/project/blob/main/images/sev.png "System Engineering View")
 
 
 Security Needs, Threats, and Features
