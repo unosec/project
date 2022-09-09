@@ -7,7 +7,7 @@
 #### Team Members
 
 
-- Josh Bowen
+- cosmicspork
 - Larissa Sazama
 - Dillon Petschke 
 - Tabot Tambe 
