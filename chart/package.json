@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^9.1.6"
+  },
+  "scripts": {
+    "build-sev": "npx mmdc -i systems-engineering-view.mmd -o images/sev.png -t dark -b transparent"
+  }
+}
