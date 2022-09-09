@@ -14,10 +14,10 @@ Systems Engineering View
 
 Security Needs, Threats, and Features
 -
-###Needs
+### Needs
 Nextcloud is intended for enterprise use, general users would have an expectation of basic privacy protection when it comes to confidential files or data stored in the application. Server administrators would have an expectation of web interface security controls that protect the underlining infrastructure from basic web attacks.
 
-###Threats
+### Threats
 - Theft of files or data from a user
 - Remote code execution on the hosting server via public web interface
 - DDOS of hosting server
@@ -28,7 +28,7 @@ Nextcloud is intended for enterprise use, general users would have an expectatio
 - Authentication issues \ authentication bypass 
 - No lockout \ faulty password reset?
 
-###Features
+### Features
 - RBAC permission options 
 - Backups \ restore from previous settings
 - Verbose application logging 
