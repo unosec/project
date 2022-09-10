@@ -37,9 +37,19 @@ A common operational environment for the community version of Nextcloud is in a 
 
 ### Security Features in the Software
 - Role-based access control permission options 
-- Backups\restore from previous settings
+- Backup\restore from previous settings
 - Verbose application logging 
 - End-to-end encryption
+- Some vulnerable features disabled
+- Brute force protection
+- Guarantee compliance with business and legal requirements (HIPAA, GDPR, and more)
+- Aligns with [Clause 14 of ISO/IEC27001-2013](https://www.itgovernance.co.uk/blog/iso-27001-the-14-control-sets-of-annex-a-explained)
+- Provide core principle baseline security
+- Keeps compliance-ready activity logs
+- Monitoring and logging tools
+- Single and SAML 2.0 authentication
+- Two-Factor Authentication
+- Video verification
 
 ---
 Team Motivation for Selecting this Software
