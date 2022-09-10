@@ -35,7 +35,7 @@ A common operational environment for the community version of Nextcloud is in a 
 - Authentication issues\authentication bypass 
   - No lockout\faulty password reset
 
-### [Security Features in the Software](Security-Whitepaper-WebVersion-072018.pdf)
+### [Security Features in the Software](security/Security-Whitepaper-WebVersion-072018.pdf)
 - Role-based access control permission options 
 - Backup\restore from previous settings
 - Verbose application logging 
