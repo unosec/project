@@ -1,63 +1,69 @@
-# Project Proposal
-Team 2 - Fall 2022
+# CYBR/CSCI 8420, Fall 2022: Group Project Proposal
+
+**Team 2**:
+* cosmicspork -- Team Lead
+* Dillon Petschke
+* Larissa Sazama
+* Jim Svoboda
+* Tabot Tambe
 ---
 
-Overview
+Project Information
 -
-For our project we will review the open source project ["Nextcloud"](https://github.com/nextcloud)
+**Chosen Software Project**: [Nextcloud](https://github.com/nextcloud)  
+[Group Github Repository](https://github.com/unosec/project)  
+[Group Project Boards](https://github.com/orgs/unosec/projects)
 
-Systems Engineering View
+---
+Operational Environment
 -
+A common operational environment for the community version of Nextcloud is in a small to medium-sized business where there is no full-time, IT staff, and the software was set up by a 3<sup>rd</sup> party. Often in this case, the software is hosted locally (installed on a server within the building) or via a Virtual Private Server. One or two employees are trained to use the Graphical User Interface (GUI) for administration of the software. In this environment there is an expectation the software will not leak sensitive information through the local network or onto the internet. Administrators expect to manage user access and be notified of common security issues. Users expect personal information, confidential files, and data, stored within the software, to not be unnecessarily available for Nextcloud use. The business anticipates that vulnerabilities be disclosed, for the software to receive timely security updates, and for the GUI to be protected against basic web attacks.
 
-![System Engineering View](https://github.com/unosec/project/blob/main/images/sev.png "System Engineering View")
+<p align="center" width="100%">
+ <b>Systems Engineering View</b><br>
+ <img width="75%" src="https://github.com/unosec/project/blob/main/images/sev.png" alt="Systems Engineering View" />
+</p>
 
-
-Security Needs, Threats, and Features
--
-### Needs
-Nextcloud is intended for enterprise use, general users would have an expectation of basic privacy protection when it comes to confidential files or data stored in the application. Server administrators would have an expectation of web interface security controls that protect the underlining infrastructure from basic web attacks.
-
-### Threats
-- Theft of files or data from a user
+### Threats Perceived by Users
+- Theft of files or data
 - Remote code execution on the hosting server via public web interface
-- DDOS of hosting server
+- Distributed denial-of-service attack on hosting server
 - Code injection via text boxes on public web interface
 - Unattended resource exhaustion of server resources
 - Privilege escalation
-- Cross site scripting
-- Authentication issues \ authentication bypass 
-- No lockout \ faulty password reset?
+- Cross-site scripting
+- Authentication issues\authentication bypass 
+  - No lockout\faulty password reset
 
-### Features
-- RBAC permission options 
-- Backups \ restore from previous settings
+### Security Features in the Software
+- Role-based access control permission options 
+- Backups\restore from previous settings
 - Verbose application logging 
-- End to end encryption
+- End-to-end encryption
 
-
-Motivation 
+---
+Team Motivation for Selecting this Software
 -
-We had initially planned to investigate a different project [audiobookshelf](https://github.com/advplyr/audiobookshelf) however the instructor suggested that instead we look for something that might be more likely to be used in the enterprise.  Josh had experience using Nextcloud and suggested that as an option, so we decided to go with that.  Since this is a large system with a server component, desktop component, and mobile components there should be many areas available for further security analysis.
+This software appears very active and well maintained. Significant efforts have been made to ensure the software's security. Because this software is a large system with a server component, desktop component, and mobile component, there should be many areas available for further security analysis. The GNU AGPL-3.0 license will not restrict contributions or hinder our project performance.
 
-Additionally, this project appears very active and well updated. Significant effort has been put into making this project secure, which leads us to believe they will consider any security recommendations we present at the end of our course.  We also feel the GNU AGPL-3.0 license would not restrict our contributions or hinder our performance.
-
-
-OSS project description
+---
+Software Description
 -
-[Nextcloud](https://nextcloud.com) describes itself as being "the industry-leading, on-premises content collaboration platform".  It's a solution similar to Dropbox or Google Drive, but offers the benefit of being an on-premise solution that's under the control of the organization implementing the software.  There are 258 separate repositories in the Nextcloud GitHub project site including code for self-hosting the server, retrieving documents via workstation applications, along with mobile apps to interact with any shared data. The [server software can be downloaded for use as one .zip file](https://download.nextcloud.com/server/releases/latest.zip).
- 
-- This project is very active and has 813 contributors. 
-- 61% php, 31% Javascript, 8% other
-- 20k Stars on GitHub and 3.2k forks. 
-- Hosts an independent website with additional documentation, install guides, community support.
+[Nextcloud](https://nextcloud.com) describes itself as being "the industry-leading, on-premises content collaboration platform".  It's a solution similar to Dropbox or Google Drive, but offers the benefit of being an on-premise solution that's under the control of the organization implementing the software.  There are 258 separate repositories in the Nextcloud GitHub project site. These repositories include code for self-hosting the server, retrieving documents via workstation applications, mobile apps to interact with any shared data, among many other applications. The [server software can be downloaded for use as one .zip file](https://download.nextcloud.com/server/releases/latest.zip).
 
+_Server Repository_:
+- 826 contributors
+- 61% PHP, 34% JavaScript, 5% other
+- 20k Stars on GitHub and 3.2k forks
 
+Hosts an independent [website](https://nextcloud.com) containing downloads, installation guides, community support, etc.
 
+---
 License Summary and Contributor Agreement
 -
-Nextcloud is licensed using the [GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.en.html) license.  This is a "copyleft" license and requires making the complete source code of any derivative works or modifications available.   All copyright and license notices must be preserved.  Any contributors must also grant patent rights.  In summary, this is a strong or restrictive license as opposed to other permissive licenses.
+Nextcloud is licensed using the [GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.en.html) license. This is a "copyleft" license and requires making the complete source code of any derivative works or modifications available. All copyright and license notices must be preserved. Any contributors must also grant patent rights. In summary, this is a strong or restrictive license as opposed to other permissive licenses.
 
-
+---
 Security History
 -
 - Publicly released vulnerabilities can be found [here](https://www.cvedetails.com/vendor/15913/Nextcloud.html)
@@ -65,10 +71,10 @@ Security History
 - A bug bounty program has been developed and has more than 350 resolved reports.
 - Published security best practices have been created for administrators to follow.
 
-
+---
 Project Planning and Reflection
 -
-Team 2 meets every Tuesday night at 5:30pm CT.  Josh is serving as the team lead, and the other team members are acting in whatever other role is needed to complete the given tasks and move the project forward.  Note that all team members contributed to various parts of this documentation and we gathered information in the team discord channel.
+_Team 2_ meets every Tuesday night at 5:30pm CST. Josh is serving as the team lead, while the other team members fill any role needed to complete the given tasks and move the project forward.  All team members contributed to various parts of this documentation and we shared information in the team discord channel. No issues among team members occurred for the proposal. As the semester progresses, team members will try to rotate through team roles.
 
 
 
