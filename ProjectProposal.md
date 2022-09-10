@@ -11,7 +11,7 @@
 Project Information
 -
 **Chosen Software Project**: [Nextcloud](https://github.com/nextcloud)  
-[Group Github Repository](https://github.com/unosec/project)  
+[Group GitHub Repository](https://github.com/unosec/project)  
 [Group Project Boards](https://github.com/orgs/unosec/projects)
 
 ---
@@ -44,7 +44,7 @@ A common operational environment for the community version of Nextcloud is in a 
 - Brute force protection
 - Guarantee compliance with business and legal requirements (HIPAA, GDPR, and more)
 - Aligns with [Clause 14 of ISO/IEC27001-2013](https://www.itgovernance.co.uk/blog/iso-27001-the-14-control-sets-of-annex-a-explained)
-- Provide core principle baseline security
+- Provide principal baseline security
 - Keeps compliance-ready activity logs
 - Monitoring and logging tools
 - Single and SAML 2.0 authentication
@@ -54,12 +54,12 @@ A common operational environment for the community version of Nextcloud is in a 
 ---
 Team Motivation for Selecting this Software
 -
-This software appears very active and well maintained. Significant efforts have been made to ensure the software's security. Because this software is a large system with a server component, desktop component, and mobile component, there should be many areas available for further security analysis. The GNU AGPL-3.0 license will not restrict contributions or hinder our project performance.
+This software appears very active and well-maintained. Significant efforts have been made to ensure the software's security. Because this software is a large system with a server component, desktop component, and mobile component, there should be many areas available for further security analysis. The GNU AGPL-3.0 license will not restrict contributions or hinder our project performance.
 
 ---
 Software Description
 -
-[Nextcloud](https://nextcloud.com) describes itself as being "the industry-leading, on-premises content collaboration platform".  It's a solution similar to Dropbox or Google Drive, but offers the benefit of being an on-premise solution that's under the control of the organization implementing the software.  There are 258 separate repositories in the Nextcloud GitHub project site. These repositories include code for self-hosting the server, retrieving documents via workstation applications, mobile apps to interact with any shared data, among many other applications. The [server software can be downloaded for use as one .zip file](https://download.nextcloud.com/server/releases/latest.zip).
+[Nextcloud](https://nextcloud.com) describes itself as being "the industry-leading, on-premises content collaboration platform".  It is a solution similar to Dropbox or Google Drive, but offers the benefit of being an on-premise solution that is under the control of the organization implementing the software.  There are 258 separate repositories in the Nextcloud GitHub project site. These repositories include code for self-hosting the server, retrieving documents via workstation applications, mobile apps to interact with any shared data, among many other applications. The [server software can be downloaded for use as one .zip file](https://download.nextcloud.com/server/releases/latest.zip).
 
 _Server Repository_:
 - 826 contributors
@@ -87,7 +87,7 @@ Security History
 ---
 Project Planning and Reflection
 -
-_Team 2_ meets every Tuesday night at 5:30pm CST. Josh is serving as the team lead, while the other team members fill any role needed to complete the given tasks and move the project forward.  All team members contributed to various parts of this documentation and we shared information in the team discord channel. No issues among team members occurred for the proposal. As the semester progresses, team members will try to rotate through team roles.
+_Team 2_ meets every Tuesday night at 5:30pm CST. Josh is serving as the team lead, while the other team members fill any role needed to complete the given tasks and move the project forward.  All team members contributed to various parts of this documentation, and we shared information in the team discord channel. No issues among team members occurred for the proposal. As the semester progresses, team members will try to rotate through team roles.
 
 
 
