@@ -35,7 +35,7 @@ A common operational environment for the community version of Nextcloud is in a 
 - Authentication issues\authentication bypass 
   - No lockout\faulty password reset
 
-### Security Features in the Software
+### [Security Features in the Software](Security-Whitepaper-WebVersion-072018.pdf)
 - Role-based access control permission options 
 - Backup\restore from previous settings
 - Verbose application logging 
@@ -73,10 +73,13 @@ License Summary and Contributor Agreement
 -
 Nextcloud is licensed using the [GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.en.html) license. This is a "copyleft" license and requires making the complete source code of any derivative works or modifications available. All copyright and license notices must be preserved. Any contributors must also grant patent rights. In summary, this is a strong or restrictive license as opposed to other permissive licenses.
 
+Nextcloud provides a contributor [Code of Conduct](https://nextcloud.com/contribute/code-of-conduct/) and {guidelines for contributing](https://github.com/nextcloud/server/blob/master/.github/CONTRIBUTING.md). To note, any potential security bugs should be reported using the [Nextcloud HackerOne page](https://hackerone.com/nextcloud) instead of filing an issue in the bug tracker.
+
 ---
 Security History
 -
 - Publicly released vulnerabilities can be found [here](https://www.cvedetails.com/vendor/15913/Nextcloud.html)
+- Threat model and accepted risks listed on [Nextcloud's website](https://nextcloud.com/security/threat-model/)
 - Numerous general security related updates are shown in recent change logs. 
 - A bug bounty program has been developed and has more than 350 resolved reports.
 - Published security best practices have been created for administrators to follow.
