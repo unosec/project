@@ -59,7 +59,7 @@ This software appears very active and well-maintained. Significant efforts have 
 ---
 Software Description
 -
-[Nextcloud](https://nextcloud.com) describes itself as being "the industry-leading, on-premises content collaboration platform".  It is a solution similar to Dropbox or Google Drive, but offers the benefit of being an on-premise solution that is under the control of the organization implementing the software.  There are 258 separate repositories in the Nextcloud GitHub project site. These repositories include code for self-hosting the server, retrieving documents via workstation applications, mobile apps to interact with any shared data, among many other applications. The [server software can be downloaded for use as one .zip file](https://download.nextcloud.com/server/releases/latest.zip).
+[Nextcloud](https://nextcloud.com) describes itself as being "the industry-leading, on-premises content collaboration platform".  It is a solution similar to Dropbox or Google Drive, but offers the benefit of being an on-premises solution that is under the control of the organization implementing the software.  There are 258 separate repositories in the Nextcloud GitHub project site. These repositories include code for self-hosting the server, retrieving documents via workstation applications, mobile apps to interact with any shared data, among many other applications. The [server software can be downloaded for use as one .zip file](https://download.nextcloud.com/server/releases/latest.zip).
 
 _Server Repository_:
 - 826 contributors
