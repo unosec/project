@@ -71,3 +71,4 @@ Extensive documentation is available explaining Nextcloud security features and 
 - [Common Misconfigurations](https://docs.nextcloud.com/server/latest/admin_manual/file_workflows/retention.html#common-misconfigurations)
 - [GDPR Compliance](https://docs.nextcloud.com/server/latest/admin_manual/gdpr/cookies.html)
 
+In addition to the above list, multiple Whitepapers are available for assistance setting up NextCloud. Common papers found on their documentation were Security and Authentication, Server-side Encryption, General Architecture Overview, End-to-end Encryption, Hackerone Case study, and Nextcloud audit by Swiss Kyos.
