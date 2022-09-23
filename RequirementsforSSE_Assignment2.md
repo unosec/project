@@ -30,3 +30,18 @@ Essential Interaction #1
 
 ![JSAssignment2](https://github.com/unosec/project/blob/main/images/JSAssignment2.png).
 
+Essential Interaction #2
+-
+
+### System of Interest
+
+- NextCloud Files Feature
+
+### Security Requirements
+
+- Anti-virus scans of files
+- Two-Factor Authentication
+- Role Based Access Controls 
+- Audit logs of changes and actions
+
+![JSAssignment2](https://github.com/unosec/project/blob/main/images/DPAssignment2.JPG).
