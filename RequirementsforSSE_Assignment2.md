@@ -44,4 +44,4 @@ Essential Interaction #2
 - Role Based Access Controls 
 - Audit logs of changes and actions
 
-![JSAssignment2](https://github.com/unosec/project/blob/main/images/DPAssignment2.JPG).
+![JSAssignment2](https://github.com/unosec/project/blob/main/images/FileManagementMisUseCase.drawio.png.JPG).
