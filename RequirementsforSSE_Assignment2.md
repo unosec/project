@@ -72,7 +72,7 @@ The Bank would like to have its employees initiate secure chat and video calls w
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
-Nextcloud advertises a number of security features that can help prevent file management misuse cases. Such as their built-in role-based file access control, complete audit log of all actions taken, and several supported anti-virus integrations to keep end users safe. Many other security features are available including file encryption, comprehensive user management controls, along with end-to-end secure communication protocols for enhanced protection. 
+Nextcloud advertises a number of security features that can help prevent collaboration misuse cases while in a group call or chat. Files can be tagged and used to limit or deny sharing and access based on several factors like IP Addresses, Geo-location and user permissions. Other security features include their built-in role-based file access control, complete audit log of all actions taken, and several supported anti-virus integrations to keep end users safe. Many other security features are available including file encryption, comprehensive user management controls, along with end-to-end secure communication protocols for enhanced protection. 
 
 
 Essential Interaction #4 [Input from Josh]
