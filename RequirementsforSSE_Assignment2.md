@@ -13,25 +13,25 @@ This document will review five essential interactions between our hypothetical b
 
 Essential Interaction #1
 -
-
-### User Story
-
-- As a Senior Bank Teller, I want to schedule a meeting with the part-time tellers so that we can review a recent policy change to our money handling policy.
+As a Senior Bank Teller, I want to schedule a meeting with the part-time tellers so that we can review a recent policy change to our money handling policy.
 
 ### System of Interest
 
-- Calendar system
+- Any text input functions throughout system, specifically reviewing Calendar details input in this case
 
 ### Security Requirements
 
-- Meeting details must remain private in transit over the network
-- Adding participants should not affect system performance or cause an error displaying sensitive information
-- Prevent malicious content such as Javascript, HTML, or external URLs from being entered in meeting details  
+- Prevent malicious content such as Javascript, HTML, external URLs, or SQL from being entered in meeting details 
 
 ![JSAssignment2](https://github.com/unosec/project/blob/main/images/JSAssignment2.png)
 
+*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+
+The misuse cases in this essential interaction describes low-level attacks that try to exploit developers not following programming best practices commonly identified by [OWASP](https://owasp.org/Top10/).  Product documentation would not advertise the presence of security features to handle these situations, but further investigation into the code should provide details.
+
 Essential Interaction #2
 -
+The Bank would like to have its employees store electronic copies of loan applications in a secure location with proper back-up and data retention procedures.
 
 ### System of Interest
 
@@ -44,17 +44,21 @@ Essential Interaction #2
 - Role Based Access Controls 
 - Audit logs of changes and actions
 
-![JSAssignment2](https://github.com/unosec/project/blob/main/images/FileManagementMisUseCase.drawio.png)
+![image](https://github.com/unosec/project/blob/main/images/FileManagementMisUseCase.drawio.png)
 
+*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+
+Nextcloud supports anti-virus scans, two-factor authentication, role based access controls, and audit logging.
 
 Essential Interaction #3
+-
 
 The Bank would like to have its employees initiate secure chat and video calls with both internal users and customers using the NextCloud Talk feature. Collaboration can happen with files while in chat and calls securely. 
 
-System of Interest
+### System of Interest
 - NextCloud Talk Feature
 
-Security Requirements
+### Security Requirements
 - Chats and video calls should remain encrypted and secure.
 - Password protected meeting invites.
 - Prevent Mailicious file sharing and logging of events.
@@ -63,10 +67,41 @@ Security Requirements
 ![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.png)
 
 
-
 *Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
 Nextcloud advertises a number of security features that can help prevent file management misuse cases. Such as their built-in role-based file access control, complete audit log of all actions taken, and several supported anti-virus integrations to keep end users safe. Many other security features are available including file encryption, comprehensive user management controls, along with end-to-end secure communication protocols for enhanced protection. 
+
+
+Essential Interaction #4 [Input from Josh]
+-
+
+### System of Interest
+- Calendar Feature
+
+### Security Requirements
+- Make sure adding a large number of participants doesn't cause an error resulting in the system displaying internal information, such as the server IP address
+
+![image](https://github.com/unosec/project/blob/main/images/JSAssignment2d.png)
+
+*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+
+We would want to review the code or configuration to make sure error messages aren't exposed.
+
+
+Essential Interaction #5 [Input from Tabot]
+-
+
+### System of Interest
+- Browser based communication to Nextcloud
+
+### Security Requirements
+- Ensure all browser based network communication while using the Nextcloud app are adequately encrypted
+
+![image](https://github.com/unosec/project/blob/main/images/JSAssignment2c.png)
+
+*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+
+Customer implementing Nextcloud software will need to implement SSL/TLS to secure communication.
 
 Part 2 
 -
@@ -87,5 +122,6 @@ Extensive documentation is available explaining Nextcloud security features and 
 - [File Retention Policies](https://docs.nextcloud.com/server/latest/admin_manual/file_workflows/retention.html)
 - [Common Misconfigurations](https://docs.nextcloud.com/server/latest/admin_manual/file_workflows/retention.html#common-misconfigurations)
 - [GDPR Compliance](https://docs.nextcloud.com/server/latest/admin_manual/gdpr/cookies.html)
+- [Logging](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/logging_configuration.html?highlight=logging)
 
 In addition to the above list, multiple Whitepapers are available for assistance setting up NextCloud. Common papers found on their documentation were Security and Authentication, Server-side Encryption, General Architecture Overview, End-to-end Encryption, Hackerone Case study, and Nextcloud audit by Swiss Kyos.
