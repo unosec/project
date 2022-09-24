@@ -6,9 +6,11 @@ Scenario
 Our scenario represents a privately-owned bank located in a small, Nebraskan town (<500 residents). Most of the bank's clientele are local farmers and ranchers, making loans very popular. The bank staff includes a President/Owner, Vice-President/Bank Manager, Loan Manager, 1 full-time Senior Teller, and 3 part-time tellers. The information stored in the Nextcloud application must be compliant with US federal banking regulations (e.g., PCI DSS, GLBA, etc.).
 
 
-Assignment Overview
+Assignment Overview / Project Board
 -
 This document will review five essential interactions between our hypothetical bank staff and the Nextcloud application.
+
+[Project Board](https://github.com/orgs/unosec/projects/7/views/1)
 
 
 Essential Interaction #1
@@ -25,7 +27,7 @@ As a Senior Bank Teller, I want to schedule a meeting with the part-time tellers
 
 ![JSAssignment2](https://github.com/unosec/project/blob/main/images/JSAssignment2.png)
 
-*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+*Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
 The misuse cases in this essential interaction describes low-level attacks that try to exploit developers not following programming best practices commonly identified by [OWASP](https://owasp.org/Top10/).  Product documentation would not advertise the presence of security features to handle these situations, but further investigation into the code should provide details.
 
@@ -46,7 +48,7 @@ The Bank would like to have its employees store electronic copies of loan applic
 
 ![image](https://github.com/unosec/project/blob/main/images/FileManagementMisUseCase.drawio.png)
 
-*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+*Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
 Nextcloud supports anti-virus scans, two-factor authentication, role based access controls, and audit logging.
 
@@ -67,7 +69,7 @@ The Bank would like to have its employees initiate secure chat and video calls w
 ![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.png)
 
 
-*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+*Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
 Nextcloud advertises a number of security features that can help prevent file management misuse cases. Such as their built-in role-based file access control, complete audit log of all actions taken, and several supported anti-virus integrations to keep end users safe. Many other security features are available including file encryption, comprehensive user management controls, along with end-to-end secure communication protocols for enhanced protection. 
 
@@ -83,7 +85,7 @@ Essential Interaction #4 [Input from Josh]
 
 ![image](https://github.com/unosec/project/blob/main/images/JSAssignment2d.png)
 
-*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+*Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
 We would want to review the code or configuration to make sure error messages aren't exposed.
 
@@ -99,7 +101,7 @@ Essential Interaction #5 [Input from Tabot]
 
 ![image](https://github.com/unosec/project/blob/main/images/JSAssignment2c.png)
 
-*Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
+*Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
 Customer implementing Nextcloud software will need to implement SSL/TLS to secure communication.
 
@@ -125,3 +127,11 @@ Extensive documentation is available explaining Nextcloud security features and 
 - [Logging](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/logging_configuration.html?highlight=logging)
 
 In addition to the above list, multiple Whitepapers are available for assistance setting up NextCloud. Common papers found on their documentation were Security and Authentication, Server-side Encryption, General Architecture Overview, End-to-end Encryption, Hackerone Case study, and Nextcloud audit by Swiss Kyos.
+
+In summary, Nextcloud appears to be a reasonably mature software product with many security features expected in modern applications such as two-factor authentication, encryption, user management and user roles, and a configurable password policy.
+
+Planning and Reflection
+-
+The team met on Tuesday 9/20 at 5:30pm.  It was decided that each team member would handle one interaction, that Dillon would work on Part 2, and Jim would do the prototype drawing to discuss at the instructor meeting.  The team also uses Discord throughout the week to discuss items.
+
+We feel the Nextcloud is a well documented product and that most key security issues have probably been addressed, however we look forward to further investigation of possible security issues.  Josh noted during discuss that any security issues with the product are probably the result of improper configuration during installation or during initial setup.  For example, not implementing SSL/TLS encryption would be a significant problem with a web application such as this.
