@@ -47,6 +47,23 @@ Essential Interaction #2
 ![JSAssignment2](https://github.com/unosec/project/blob/main/images/FileManagementMisUseCase.drawio.png)
 
 
+Essential Interaction #3
+
+The Bank would like to have its employees initiate secure chat and video calls with both internal users and customers using the NextCloud Talk feature. Collaboration can happen with files while in chat and calls securely. 
+
+System of Interest
+•	NextCloud Talk Feature
+
+Security Requirements
+•	Chats and video calls should remain encrypted and secure.
+•	Password protected meeting invites.
+•	Prevent Mailicious file sharing and logging of events.
+•	Prevent DOS by adding too many attendees.
+
+![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.jpg)
+
+
+
 *Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
 Nextcloud advertises a number of security features that can help prevent file management misuse cases. Such as their built-in role-based file access control, complete audit log of all actions taken, and several supported anti-virus integrations to keep end users safe. Many other security features are available including file encryption, comprehensive user management controls, along with end-to-end secure communication protocols for enhanced protection. 
