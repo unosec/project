@@ -58,7 +58,7 @@ Security Requirements
 - Chats and video calls should remain encrypted and secure.
 - Password protected meeting invites.
 - Prevent Mailicious file sharing and logging of events.
-- Prevent DOS by adding too many attendees.
+- Prevent DOS by limiting attendees.
 
 ![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.png)
 
