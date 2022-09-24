@@ -60,7 +60,7 @@ Security Requirements
 •	Prevent Mailicious file sharing and logging of events.
 •	Prevent DOS by adding too many attendees.
 
-![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.jpg)
+![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.png)
 
 
 
