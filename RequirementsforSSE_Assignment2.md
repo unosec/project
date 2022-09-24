@@ -52,7 +52,7 @@ The Bank would like to have its employees store electronic copies of loan applic
 
 Nextcloud supports anti-virus scans, two-factor authentication, role based access controls, and audit logging.
 
-Essential Interaction #3
+Essential Interaction #3 [Input from Tabot]
 -
 
 The Bank would like to have its employees initiate secure chat and video calls with both internal users and customers using the NextCloud Talk feature. Collaboration can happen with files while in chat and calls securely. 
@@ -90,7 +90,7 @@ Essential Interaction #4 [Input from Josh]
 We would want to review the code or configuration to make sure error messages aren't exposed.
 
 
-Essential Interaction #5 [Input from Tabot]
+Essential Interaction #5 
 -
 
 ### System of Interest
