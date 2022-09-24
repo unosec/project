@@ -65,6 +65,7 @@ The Bank would like to have its employees initiate secure chat and video calls w
 - Password protected meeting invites.
 - Prevent Mailicious file sharing and logging of events.
 - Prevent DOS by limiting attendees.
+- Audit violators and malicious events.
 
 ![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.png)
 
