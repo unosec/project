@@ -52,13 +52,13 @@ Essential Interaction #3
 The Bank would like to have its employees initiate secure chat and video calls with both internal users and customers using the NextCloud Talk feature. Collaboration can happen with files while in chat and calls securely. 
 
 System of Interest
-•	NextCloud Talk Feature
+- NextCloud Talk Feature
 
 Security Requirements
-•	Chats and video calls should remain encrypted and secure.
-•	Password protected meeting invites.
-•	Prevent Mailicious file sharing and logging of events.
-•	Prevent DOS by adding too many attendees.
+- Chats and video calls should remain encrypted and secure.
+- Password protected meeting invites.
+- Prevent Mailicious file sharing and logging of events.
+- Prevent DOS by adding too many attendees.
 
 ![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.png)
 
