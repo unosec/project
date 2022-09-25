@@ -10,7 +10,7 @@ Assignment Overview / Project Board
 -
 This document will review five essential interactions between our hypothetical bank staff and the Nextcloud application.
 
-[Project Board](https://github.com/orgs/unosec/projects/7/views/1)
+[Project Board](https://github.com/orgs/unosec/projects/2)
 
 
 Essential Interaction #1
