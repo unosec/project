@@ -90,7 +90,7 @@ Essential Interaction #4
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
-Nextcloud advertises their LDAP integration as a feature for enterprise customers. These common mis-use cases not only implact the security of the software but everything else connected to their active directory (or other backend). SSL/TLS is enforced for LDAP integrations and generic error messages are used at login to prevent information disclosure. 
+Nextcloud advertises their LDAP integration as a feature for enterprise customers. These common mis-use cases, not only impact the security of the software, but everything else connected to their active directory (or other backend). SSL/TLS is enforced for LDAP integrations and generic error messages are used at login to prevent information disclosure. 
 
 
 Essential Interaction #5 
