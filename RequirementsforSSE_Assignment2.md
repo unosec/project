@@ -79,16 +79,18 @@ Essential Interaction #4
 -
 
 ### System of Interest
-- Calendar Feature
+- LDAP Integration
 
 ### Security Requirements
-- Make sure adding a large number of participants doesn't cause an error resulting in the system displaying internal information, such as the server IP address
+- Protect the user's login credentials
+- Prevent disclosure of login information
+- Protect the server's LDAP credentials
 
-![image](https://github.com/unosec/project/blob/main/images/JSAssignment2d.png)
+![image](https://github.com/unosec/project/blob/main/images/rsse-cs.png)
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
-We would want to review the code or configuration to make sure error messages aren't exposed.
+Nextcloud advertises their LDAP integration as a feature for enterprise customers. These common mis-use cases not only implact the security of the software but everything else connected to their active directory (or other backend). SSL/TLS is enforced for LDAP integrations and generic error messages are used at login to prevent information disclosure. 
 
 
 Essential Interaction #5 
