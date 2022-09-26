@@ -86,7 +86,7 @@ Essential Interaction #4
 - Prevent disclosure of login information
 - Protect the server's LDAP credentials
 
-![image](https://github.com/unosec/project/blob/main/images/rsse-cs.png)
+![image](https://github.com/unosec/project/blob/1a0a11bac2f7b7d1c0e9162798b7d294099ccaf4/images/rsse-cs.png)
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
