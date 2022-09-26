@@ -95,12 +95,12 @@ Essential Interaction #5
 -
 
 ### System of Interest
-- Browser based communication to Nextcloud
+- Nextcloud Mail Application
 
 ### Security Requirements
 - Ensure all browser based network communication while using the Nextcloud app are adequately encrypted
 
-![image](https://github.com/unosec/project/blob/main/images/JSAssignment2c.png)
+![image](https://github.com/unosec/project/blob/main/images/SSE-LS.png)
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
