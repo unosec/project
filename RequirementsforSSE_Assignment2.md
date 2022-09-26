@@ -15,15 +15,15 @@ This document will review five essential interactions between our hypothetical b
 
 Essential Interaction #1
 -
-As a Senior Bank Teller, I want to schedule a meeting with the part-time tellers so that we can review a recent policy change to our money handling policy.
+A Senior Bank Teller wants to schedule a meeting with the part-time tellers so that they can review a recent, policy change to the money-handling policy.
 
 ### System of Interest
 
-- Any text input functions throughout system, specifically reviewing Calendar details input in this case
+- Any text input functions throughout the Nextcloud system (specifically reviewing Calendar input in this scenario).
 
 ### Security Requirements
 
-- Prevent malicious content such as Javascript, HTML, external URLs, or SQL from being entered in meeting details 
+- Prevent malicious content such as Javascript, HTML, external URLs, or SQL from being entered into meeting details 
 
 ![JSAssignment2](https://github.com/unosec/project/blob/main/images/JSAssignment2.png)
 
@@ -43,7 +43,7 @@ The Bank would like to have its employees store electronic copies of loan applic
 
 - Anti-virus scans of files
 - Two-Factor Authentication
-- Role Based Access Controls 
+- Role-Based Access Controls 
 - Audit logs of changes and actions
 
 ![image](https://github.com/unosec/project/blob/main/images/FileManagementMisUseCase.drawio.png)
@@ -52,30 +52,30 @@ The Bank would like to have its employees store electronic copies of loan applic
 
 Nextcloud supports anti-virus scans, two-factor authentication, role based access controls, and audit logging.
 
-Essential Interaction #3 [Input from Tabot]
+Essential Interaction #3
 -
 
-The Bank would like to have its employees initiate secure chat and video calls with both internal users and customers using the NextCloud Talk feature. Collaboration can happen with files while in chat and calls securely. 
+The Bank would like to have its employees initiate secure chat and video calls with both internal users and customers using the NextCloud Talk feature. File-sharing, during chat and video calls, is also expected. 
 
 ### System of Interest
 - NextCloud Talk Feature
 
 ### Security Requirements
-- Chats and video calls should remain encrypted and secure.
-- Password protected meeting invites.
-- Prevent Mailicious file sharing and logging of events.
-- Prevent DOS by limiting attendees.
-- Audit violators and malicious events.
+- Chats and video calls to remain encrypted and secure
+- Password-protected meeting invites
+- Prevent Mailicious file-sharing and logging of events
+- Prevent DOS by limiting attendees
+- Audit violators and malicious events
 
 ![image](https://github.com/unosec/project/blob/main/images/NextCloudTalk.png)
 
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
-Nextcloud advertises a number of security features that can help prevent collaboration misuse cases while in a group call or chat. Files can be tagged and used to limit or deny sharing and access based on several factors like IP Addresses, Geo-location and user permissions. Other security features include their built-in role-based file access control, complete audit log of all actions taken, and several supported anti-virus integrations to keep end users safe. Many other security features are available including file encryption, comprehensive user management controls, along with end-to-end secure communication protocols for enhanced protection. 
+Nextcloud advertises a number of security features that can help prevent collaboration misuse cases while in a group call or chat. Files can be tagged and used to limit or deny sharing and access based on several factors like IP Addresses, Geo-location, and user permissions. Other security features include built-in role-based file access control, complete audit logging of all actions taken, and several supported anti-virus integrations to keep end-users safe. Many other security features are available including file encryption, comprehensive user management controls, along with end-to-end secure communication protocols for enhanced protection. 
 
 
-Essential Interaction #4 [Input from Josh]
+Essential Interaction #4
 -
 
 ### System of Interest
@@ -93,7 +93,7 @@ We would want to review the code or configuration to make sure error messages ar
 
 Essential Interaction #5 
 -
-Any employee using the Mail application has access to sending and receiving emails through the client. An email being sent from an employee may be intercepted by an attacker. An email being received by an employee can include a malicious link that could include a phishing attempt or even more serious consequences.
+Any employee using the Mail application has access to sending and receiving emails through the client. An email being sent from an employee may be intercepted by an attacker. An email being received by an employee can include a malicious link that could include a phishing attempt or spyware.
 
 ### System of Interest
 - Nextcloud Mail Application
@@ -106,7 +106,7 @@ Any employee using the Mail application has access to sending and receiving emai
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
-The security requirements derived from this misuse case analysis include Anti-virus application as well as email message encryption. Nextcloud advertises an [Anti-virus for files](https://apps.nextcloud.com/apps/files_antivirus) application that comes with the Nextcloud application. The anti-virus application "inspects files that are uploaded to Nextcloud for viruses before they are written to the Nextcloud storage". There is nothing stating that the anti-virus application scans the workstation on which Nextcloud is installed, so this may leave the computer vulnerable while protecting the Nextcloud application and server. The Nextcloud Mail Application is compatible with the [Mailvelope](https://mailvelope.com/) browser extension. This extension provides end-to-end message encryption.
+The security requirements derived from this misuse case analysis include an Anti-virus application as well as email message encryption. Nextcloud advertises an [Anti-virus for files](https://apps.nextcloud.com/apps/files_antivirus) application that comes with the Nextcloud application. The anti-virus application "inspects files that are uploaded to Nextcloud for viruses before they are written to the Nextcloud storage". There is nothing stating that the anti-virus application scans the workstation on which Nextcloud is being used, so this may leave the computer vulnerable while protecting the Nextcloud application and server. The Nextcloud Mail Application is compatible with the [Mailvelope](https://mailvelope.com/) browser extension. This extension provides end-to-end message encryption.
 
 One aspect that was not found advertised by Nextcloud is a spam filter option. This will be investigated further.
 
@@ -133,10 +133,10 @@ Extensive documentation is available explaining Nextcloud security features and 
 
 In addition to the above list, multiple Whitepapers are available for assistance setting up NextCloud. Common papers found on their documentation were Security and Authentication, Server-side Encryption, General Architecture Overview, End-to-end Encryption, Hackerone Case study, and Nextcloud audit by Swiss Kyos.
 
-In summary, Nextcloud appears to be a reasonably mature software product with many security features expected in modern applications such as two-factor authentication, encryption, user management and user roles, and a configurable password policy.
+Nextcloud appears to be a reasonably mature, software product with many security features expected in modern applications such as two-factor authentication, encryption, user management and user roles, and a configurable password policy. The documentation, viewed for this assignment, includes the necessary steps for application installation and use. We were not able to find any issues regarding security-related configuration or installation. However, as discussed in "Essential Interaction #5", a spam filter is missing from the Mail client. This would definitely be a popular addition to this particular application.
 
 Planning and Reflection
 -
 The team met on Tuesday 9/20 at 5:30pm.  It was decided that each team member would handle one interaction, that Dillon would work on Part 2, and Jim would do the prototype drawing to discuss at the instructor meeting.  The team also uses Discord throughout the week to discuss items.
 
-We feel the Nextcloud is a well documented product and that most key security issues have probably been addressed, however we look forward to further investigation of possible security issues.  Josh noted during discuss that any security issues with the product are probably the result of improper configuration during installation or during initial setup.  For example, not implementing SSL/TLS encryption would be a significant problem with a web application such as this.
+We feel the Nextcloud is a well-documented product and that most key security issues have probably been addressed, however we look forward to further investigation of possible security issues.  Josh noted during discuss that any security issues with the product are probably the result of improper configuration during installation or during initial setup.  For example, not implementing SSL/TLS encryption would be a significant problem with a web application such as this.
