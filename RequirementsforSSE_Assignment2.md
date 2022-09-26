@@ -93,18 +93,22 @@ We would want to review the code or configuration to make sure error messages ar
 
 Essential Interaction #5 
 -
+Any employee using the Mail application has access to sending and receiving emails through the client. An email being sent from an employee may be intercepted by an attacker. An email being received by an employee can include a malicious link that could include a phishing attempt or even more serious consequences.
 
 ### System of Interest
 - Nextcloud Mail Application
 
 ### Security Requirements
-- Ensure all browser based network communication while using the Nextcloud app are adequately encrypted
+- Anti-virus scans of the workstation
+- Message encryption
 
 ![image](https://github.com/unosec/project/blob/main/images/SSE-LS.png)
 
 *Reflection - Assess the alignment of security requirements derived from misuse case analysis with advertised features of the open-source software:*
 
-Customer implementing Nextcloud software will need to implement SSL/TLS to secure communication.
+The security requirements derived from this misuse case analysis include Anti-virus application as well as email message encryption. Nextcloud advertises an [Anti-virus for files](https://apps.nextcloud.com/apps/files_antivirus) application that comes with the Nextcloud application. The anti-virus application "inspects files that are uploaded to Nextcloud for viruses before they are written to the Nextcloud storage". There is nothing stating that the anti-virus application scans the workstation on which Nextcloud is installed, so this may leave the computer vulnerable while protecting the Nextcloud application and server. The Nextcloud Mail Application is compatible with the [Mailvelope](https://mailvelope.com/) browser extension. This extension provides end-to-end message encryption.
+
+One aspect that was not found advertised by Nextcloud is a spam filter option. This will be investigated further.
 
 Part 2 
 -
