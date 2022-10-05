@@ -14,7 +14,7 @@ Top-Level Claim #1
 
 - The Nextcloud calendar form does not allow script or SQL injection exploits.
 
-![image](https://github.com/unosec/project/blob/main/images/JSAssignment3.png)
+![image](https://github.com/unosec/project/blob/main/images/JSassignment3.png)
 
 Top-Level Claim #2
 -
