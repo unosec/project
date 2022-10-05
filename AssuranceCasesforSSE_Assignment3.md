@@ -38,6 +38,9 @@ Top-Level Claim #4
 
 Top-Level Claim #5
 -
+### Claim
+- Nextcloud minimizes person-in-the-middle attacks.
+
 [TBD]
 
 Part 2 
