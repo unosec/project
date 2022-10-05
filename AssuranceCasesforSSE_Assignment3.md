@@ -16,6 +16,9 @@ Top-Level Claim #1
 
 ![image](https://github.com/unosec/project/blob/main/images/JSassignment3.png)
 
+
+<!-- https://www.php.net/manual/en/function.htmlspecialchars.php -->
+
 Top-Level Claim #2
 -
 [TBD]
