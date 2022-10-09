@@ -45,7 +45,13 @@ Top-Level Claim #3
 
 Top-Level Claim #4
 -
-[TBD]
+
+### Claim
+- Nextcloud does not leak authentication information
+
+![image](https://github.com/unosec/project/blob/main/images/LDAPAssuranceCase.drawio.png)
+
+**Alignment Assessment:** Very little about the security of Nextcloud's LDAP integration is included in the documentation. However there are security scanning features built-in to check that the server is using secure connections. It will prompt the server administrator(s) to make changes if the software is getting HTTP requests. I was able to test this on an instance running in a Docker container on a server on my local network. There is also a Nectcloud provided [external security scanning tool](https://scan.nextcloud.com/) that will check for insecure connections. 
 
 
 Top-Level Claim #5
