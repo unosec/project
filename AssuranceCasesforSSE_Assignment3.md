@@ -27,8 +27,8 @@ Top-Level Claim #2
 ![image](https://github.com/unosec/project/blob/main/images/dpetschke-Claim.png)
 
 Top-Level Claim #3
--
-[TBD]
+- Nextcloud prevents malicious file uploads
+![image](https://github.com/unosec/project/blob/main/images/MalwareProtectionUseCase.png)
 
 
 Top-Level Claim #4
