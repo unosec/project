@@ -28,6 +28,7 @@ Top-Level Claim #2
 
 Top-Level Claim #3
 - Nextcloud prevents malicious file uploads
+
 ![image](https://github.com/unosec/project/blob/main/images/MalwareProtectionUseCase.png)
 
 
