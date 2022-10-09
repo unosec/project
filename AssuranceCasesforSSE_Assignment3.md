@@ -35,6 +35,9 @@ Top-Level Claim #2
 ![image](https://github.com/unosec/project/blob/main/images/dpetschke-Claim.png)
 
 Top-Level Claim #3
+-
+
+### Claim
 - Nextcloud prevents malicious file uploads
 
 ![image](https://github.com/unosec/project/blob/main/images/MalwareProtectionUseCase.png)
@@ -59,4 +62,8 @@ Part 2
 
 Planning and Reflection
 -
-[TBD]
+The team met on Tuesday 10/4 at 5:30pm. It was decided that each team member would handle one top-level claim. The team also uses Discord throughout the week to discuss items.
+
+We discussed that it would make sense to continue to focus on the features we have been working with throughout the project.
+
+During our weekly meeting with Dr. Gandhi we clarified that predicates should not contain compound statements (ex. "this or that"), that rebuttals should come between claims (a claim shouldn't directly support a claim), and that inference rules were more of an advanced topic.
