@@ -32,7 +32,7 @@ Top-Level Claim #2
 ### Claim
 - Nextcloud sufficiently prevents unauthorized file access. 
 
-![image](https://github.com/unosec/project/blob/main/images/dpetschke-Claim.png)
+![image](https://github.com/unosec/project/blob/main/images/Dpetschke-Claim.png)
 
 Top-Level Claim #3
 -
