@@ -34,6 +34,9 @@ Top-Level Claim #2
 
 ![image](https://github.com/unosec/project/blob/main/images/Dpetschke-Claim.png)
 
+**Alignment Assessment:**  Extensive documentation around [file access controls](https://docs.nextcloud.com/server/latest/admin_manual/file_workflows/access_control.html) and Role Based Access Controls currently exists in the NextCloud administrator guide. 2FA topics and [setup instructions](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/two_factor-auth.html) are also available. However, a lack of support for popular apps limits the current options for 2FA strictly to text message instead of commonly used apps like Google authenticator or Duo. [Disk encryption](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/encryption_configuration.html) and individual file encryption is also widely documented in NextCloud’s administrator’s guide. Along with several other best practice security control recommendations. 
+
+
 Top-Level Claim #3
 -
 
