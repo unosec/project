@@ -67,8 +67,11 @@ Top-Level Claim #5
 ![image](https://github.com/unosec/project/blob/main/images/AssuranceCase-LS.png)
 
 **Alignment Assessment:**
+
 **Evidence E1:** Various threat scenarios have been tested during professional security audits. These audits can be found [here](https://github.com/mailvelope/mailvelope/wiki/Security).
+
 **Evidence E2, E5:** Some information for the entities found in E2-E5 can be found in [Nextcloud's Security White Paper](https://github.com/unosec/project/blob/main/security/Security-Whitepaper-WebVersion-072018.pdf). For example, Server-side Encryption, End to End Client-Side Encryption, and Key Management are all described. Referral to the Alignment Assessment for Top-Level Claim #4 is also useful.
+
 A major gap found in the Nextcloud Mail app is the availability of a spam filter. This would help prevent phishing attacks within the program.
 
 
