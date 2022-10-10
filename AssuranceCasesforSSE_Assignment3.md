@@ -16,7 +16,7 @@ Top-Level Claim #1
 
 ![image](https://github.com/unosec/project/blob/main/images/JSassignment3.png)
 
-**Alignment Assessment:**  Product documentation typically doesn't address a low-level feature such as injection attacks, so a deeper investigation such a code review is required.  I cloned the server repository and began to inspect the code.  Nextcloud itself is composed of many other open source projects reference via the "3rdparty" folder.  The calendar functionality is in the CalDAV project from [sabredav.org](https://sabredav.org).  I used grep to search the files for the "htmlspecialchars" function.  I found this function in use of line 78 of [this file](https://github.com/nextcloud/3rdparty/blob/master/sabre/dav/lib/DAV/Browser/HtmlOutputHelper.php) which indicates logic is in place to prevent HTML/Javascript injection attacks.  In reviewing what appears to be the [data access code](https://github.com/nextcloud/3rdparty/blob/020d0d3892bd3b7296db8ed21448c834d33d5723/sabre/dav/lib/CalDAV/Backend/PDO.php) for the CalDAV functionality, the system does appear to use parameterized queries, for example on lines 253-254:
+**Alignment Assessment:**  Product documentation typically doesn't address a low-level feature such as injection attacks, so a deeper investigation of such a code review is required.  I cloned the server repository and began to inspect the code.  Nextcloud itself is composed of many other open source projects referenced via the "3rdparty" folder.  The calendar functionality is in the CalDAV project from [sabre/dav](https://sabre.io).  I used grep to search the files for the "htmlspecialchars" function.  I found this function in use on line 78 of [this file](https://github.com/nextcloud/3rdparty/blob/master/sabre/dav/lib/DAV/Browser/HtmlOutputHelper.php), which indicates logic is in place to prevent HTML/Javascript injection attacks.  In reviewing, what appears to be, the [data access code](https://github.com/nextcloud/3rdparty/blob/020d0d3892bd3b7296db8ed21448c834d33d5723/sabre/dav/lib/CalDAV/Backend/PDO.php) for the CalDAV functionality, the system does appear to use parameterized queries. Lines 253-254:
 ``` 
 $stmt = $this->pdo->prepare('INSERT INTO '.$this->calendarTableName.' (synctoken, components) VALUES (1, ?)');
 $stmt->execute([$components]);
@@ -45,7 +45,7 @@ Top-Level Claim #3
 
 ![image](https://github.com/unosec/project/blob/main/images/MalwareProtectionUseCase.png)
 
-**Alignment Assessment:** Nextcloud documentation provides substantial information about the [Antivirus scanner](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/antivirus_configuration.html) and [ransomware protection](https://nextcloud.com/blog/nextcloud-presents-ransomware-protection-app/) application. This documentation also include installation and configuration instructions but also lacks support for intergration of external antimalware solutions such as fireeye security or crowdstrike. However, the ransomware recovery app is also available and capable of analyzing the version information in nextcloud for use to [recover](https://nextcloud.com/blog/how-nextcloud-helps-protect-against-ransomware/#:~:text=Nextcloud%20uniquely%20offers%20this%20capability,just%20before%20it%20got%20encrypted.) data even after the infection has taken place.
+**Alignment Assessment:** Nextcloud documentation provides substantial information about the [Antivirus scanner](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/antivirus_configuration.html) and [Ransomware Protection](https://nextcloud.com/blog/nextcloud-presents-ransomware-protection-app/) application. This documentation also includes installation and configuration instructions, but lacks support for intergration of external antimalware solutions such as FireEye Security or CrowdStrike. However, the Ransomware Recovery app is also available and capable of analyzing the version information in Nextcloud to [recover](https://nextcloud.com/blog/how-nextcloud-helps-protect-against-ransomware/#:~:text=Nextcloud%20uniquely%20offers%20this%20capability,just%20before%20it%20got%20encrypted.) data even after the infection has taken place.
 
 
 Top-Level Claim #4
@@ -56,15 +56,20 @@ Top-Level Claim #4
 
 ![image](https://github.com/unosec/project/blob/main/images/LDAPAssuranceCase.drawio.png)
 
-**Alignment Assessment:** Very little about the security of Nextcloud's LDAP integration is included in the documentation. However there are security scanning features built-in to check that the server is using secure connections. It will prompt the server administrator(s) to make changes if the software is getting HTTP requests. I was able to test this on an instance running in a Docker container on a server on my local network. There is also a Nectcloud provided [external security scanning tool](https://scan.nextcloud.com/) that will check for insecure connections. 
+**Alignment Assessment:** Very little about the security of Nextcloud's LDAP integration is included in the documentation. However, there are security scanning features built-in to check that the server is using secure connections. It will prompt the server administrator(s) to make changes if the software is getting HTTP requests. I was able to test this on an instance running in a Docker container on a server on my local network. There is also a Nectcloud provided [external security scanning tool](https://scan.nextcloud.com/) that will check for insecure connections. 
 
 
 Top-Level Claim #5
 -
 ### Claim
-- Nextcloud minimizes person-in-the-middle attacks.
+- The Nextcloud Mail app is acceptably secure
 
-[TBD]
+![image](https://github.com/unosec/project/blob/main/images/AssuranceCase-LS.png)
+
+**Alignment Assessment:**
+**Evidence E1:** Various threat scenarios have been tested during professional security audits. These audits can be found [here](https://github.com/mailvelope/mailvelope/wiki/Security).
+**Evidence E2, E5:** Some information for the entities found in E2-E5 can be found in [Nextcloud's Security White Paper](https://github.com/unosec/project/blob/main/security/Security-Whitepaper-WebVersion-072018.pdf). For example, Server-side Encryption, End to End Client-Side Encryption, and Key Management are all described. Referral to the Alignment Assessment for Top-Level Claim #4 is also useful.
+A major gap found in the Nextcloud Mail app is the availability of a spam filter. This would help prevent phishing attacks within the program.
 
 
 
