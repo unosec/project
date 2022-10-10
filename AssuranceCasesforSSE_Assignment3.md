@@ -43,7 +43,7 @@ Top-Level Claim #3
 ### Claim
 - Nextcloud prevents malicious file uploads
 
-![image](https://github.com/unosec/project/blob/main/images/MalwareProtectionUseCase.png)
+![image](https://github.com/unosec/project/blob/main/images/MalwareProtectionUseCase.drawio.png)
 
 **Alignment Assessment:** Nextcloud documentation provides substantial information about the [Antivirus scanner](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/antivirus_configuration.html) and [Ransomware Protection](https://nextcloud.com/blog/nextcloud-presents-ransomware-protection-app/) application. This documentation also includes installation and configuration instructions, but lacks support for intergration of external antimalware solutions such as FireEye Security or CrowdStrike. However, the Ransomware Recovery app is also available and capable of analyzing the version information in Nextcloud to [recover](https://nextcloud.com/blog/how-nextcloud-helps-protect-against-ransomware/#:~:text=Nextcloud%20uniquely%20offers%20this%20capability,just%20before%20it%20got%20encrypted.) data even after the infection has taken place.
 
