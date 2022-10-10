@@ -45,6 +45,8 @@ Top-Level Claim #3
 
 ![image](https://github.com/unosec/project/blob/main/images/MalwareProtectionUseCase.png)
 
+**Alignment Assessment:** Nextcloud documentation provides substantial information about the [Antivirus scanner] (https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/antivirus_configuration.html) and [ransomware protection] (https://nextcloud.com/blog/how-nextcloud-helps-protect-against-ransomware/#:~:text=Nextcloud%20uniquely%20offers%20this%20capability,just%20before%20it%20got%20encrypted.) application. This documentation also include installation and configuration instructions but also lacks support for intergration of external antimalware solutions such as fireeye security or crowdstrike. However, the ransomware recovery app is also available and capable of analyzing the version information in nextcloud for use to recover data even after the infection has taken place.
+
 
 Top-Level Claim #4
 -
