@@ -66,10 +66,7 @@ Top-Level Claim #5
 
 [TBD]
 
-Part 2 
--
 
-[TBD]
 
 Planning and Reflection
 -
