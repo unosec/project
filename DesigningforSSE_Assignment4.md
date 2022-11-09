@@ -11,6 +11,7 @@ Level 0 DFD
 -
 
 - <a href="https://github.com/unosec/project/blob/main/DFD_Reports/Level0DFD.htm" target="_blank">Link to Full Report</a>
+- ![Link to Full Report](https://github.com/unosec/project/blob/main/DFD_Reports/Level0DFD.htm)
 
 Level 1 DFD Scenarios
 -
