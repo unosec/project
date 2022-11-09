@@ -10,11 +10,7 @@ This document will review the data flow diagrams (DFDs) for each of the five sce
 Level 0 DFD
 -
 
-- <a href="https://github.com/unosec/project/blob/main/DFD_Reports/Level0DFD.htm" target="_blank">Link to Full Report</a>
-- ![Link to Full Report](https://github.com/unosec/project/blob/main/DFD_Reports/Level0DFD.htm)
-
 - <a href="https://unosec.github.io/Level0DFD.htm" target="_blank">Link to Full Report</a>
-- ![Link to Full Report](https://unosec.github.io/Level0DFD.htm)
 
 Level 1 DFD Scenarios
 -
