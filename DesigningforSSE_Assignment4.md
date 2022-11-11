@@ -7,64 +7,34 @@ This document will review the data flow diagrams (DFDs) for each of the five sce
 
 [Project Board](https://github.com/orgs/unosec/projects/8)
 
+Scenarios
+-
+
+- The Nextcloud calendar form does not allow injection exploits.
+- Nextcloud sufficiently prevents unauthorized file access. 
+- Nextcloud prevents malicious file uploads.
+- Nextcloud does not leak authentication information.
+- The Nextcloud Mail app is acceptably secure
+
 Level 0 DFD
 -
 
 - <a href="https://unosec.github.io/Level0DFD.htm" target="_blank">Link to Full Report</a>
 
-Level 1 DFD Scenarios
+Level 1 DFD 
 -
 
-Scenario #1
+- <a href="https://unosec.github.io/Level1DFD.htm" target="_blank">Link to Full Report</a>
+
+Observations
 -
 
-- The Nextcloud calendar form does not allow injection exploits.
 
-![image](https://github.com/unosec/project/blob/main/images/placeholder_dfd.png)
-
-**Observations:**  placeholder
-
-Scenario #2 (update as needed)
--
-
-- Nextcloud sufficiently prevents unauthorized file access. 
-
-![image](https://github.com/unosec/project/blob/main/images/placeholder_dfd.png)
-
-**Observations:**  placeholder
-
-Scenario #3 (update as needed)
--
-
-- Nextcloud prevents malicious file uploads
-
-![image](https://github.com/unosec/project/blob/main/images/placeholder_dfd.png)
-
-**Observations:**  placeholder
-
-Scenario #4 (update as needed)
--
-
-- Nextcloud does not leak authentication information
-
-![image](https://github.com/unosec/project/blob/main/images/placeholder_dfd.png)
-
-**Observations:**  placeholder
-
-Scenario #5 (update as needed)
--
-
-- The Nextcloud Mail app is acceptably secure
-
-![image](https://github.com/unosec/project/blob/main/images/placeholder_dfd.png)
-
-**Observations:**  placeholder
 
 
 
 Planning and Reflection
 -
-The team met via discord on Tuesday 10/8 at 5:30pm. It was decided that each team member would handle one scenario corresponding to their preview work claim. The team also uses Discord throughout the week to discuss items.
+The team met via discord on Tuesday 10/8 at 5:30pm. The team also used Discord throughout the week to discuss items.
 
-
-During our weekly meeting with Dr. Gandhi we clarified ...
+During our weekly meeting with Dr. Gandhi we clarified that an external database not part of the codebase/project should be listed as an External Interactor.
