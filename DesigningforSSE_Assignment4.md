@@ -45,7 +45,7 @@ Project Collaboration
 -
 The team met via discord on Tuesday 10/8 at 5:30pm. The team also used Discord throughout the week to discuss items.
 
-During our weekly meeting with Dr. Gandhi we clarified that an external database not part of the codebase/project should be listed as an External Interactor.
+During our weekly meeting with Dr. Gandhi we clarified that an external database not part of the codebase/project should be listed as an External Interactor.  He also clarified that detailed threat/mitigation analysis was not needed on the Level 0 diagram.
 
 Josh developed the initial Level 1 diagram and shared it with the team via Discord.  Jim added in additional details to the diagram.  Each team member documented mitigation strategies relevant to their scenarios or application familiarity.
 
