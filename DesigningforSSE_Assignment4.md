@@ -38,6 +38,10 @@ Based in our threat analysis, we made the following design-related observations:
 - NGINX, Nextcloud, the File System, and the SQL database (depending on database used) all support various levels of logging to address repudiation issues.
 - The Nextcloud application needs an appropriate account to permit file system access, but the file system data store also needs to properly secured to prevent access or tampering by other internal users or groups.
 - While the Calendar Plug-in and Mail Plug-in may run in the same process/memory space as Nextcloud, since they are completely separate open source code projects used by Nextcloud it seemed appropriate they should diagrammed as a separate processes.
+- NextCloud’s lack of HA server pairing features and lack of load balancing over multiple servers may introduce availability risks if a single server would crash. 
+- RBAC settings need appropriate configurations to be effective in their role preventing unauthorized file read\write access. Nextcloud’s out of the box settings will not suffice to meet standard security controls. 
+- NextCloud’s optional anti-virus will need to be configured and enabled to meet standard security controls. Out of the box settings do not automatically enable this feature. 
+- NextCloud’s optional server-side file encryption will need to be utilized to meet standard security controls. Out of the box settings do not automatically enable this feature.
  
 <h3><a href="https://github.com/orgs/unosec/projects/8" target="_blank">Project Board</a> </h3>
 
