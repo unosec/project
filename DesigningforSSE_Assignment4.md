@@ -3,7 +3,7 @@
 
 Assignment Overview / Project Board
 -
-This document will review the data flow diagrams (DFDs) for each of the five scenarios identified when building misuse cases and assurance claims for our hypothetical bank staff using the Nextcloud application.
+This document reviews the data flow diagrams (DFDs) for each of the five scenarios that were identified when building Nextcloud application misuse cases and assurance claims for our hypothetical bank staff.
 
 
 Scenarios
@@ -13,7 +13,7 @@ Scenarios
 - Nextcloud sufficiently prevents unauthorized file access. 
 - Nextcloud prevents malicious file uploads.
 - Nextcloud does not leak authentication information.
-- The Nextcloud Mail app is acceptably secure
+- The Nextcloud Mail app is acceptably secure.
 
 Level 0 DFD
 -
@@ -25,10 +25,15 @@ Level 1 DFD
 
 - <h3><a href="https://unosec.github.io/Level1DFD.htm" target="_blank">Link to Full Report</a>
 
+Level 2 DFD 
+-
+
+- <h3><a href="https://unosec.github.io/Level2DFD.htm" target="_blank">Link to Full Report</a>
+
 Observations
 -
 
-Based in our threat analysis, we made the following design-related observations:
+Based on our threat analysis, we made the following design-related observations:
 
 - Nextcloud supports username/password authentication and role based access to various functions.  This mitigates application level spoofing.
 - We expect the system to support encrypted communication across the internet threat boundary, and possibly also within the firewall if supported by systems such as the database.  If the internal network is not fully trusted, then unencrypted internal communication is a gap that needs to be addressed.  This is needed to mitigate tampering and information disclosure.
