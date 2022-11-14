@@ -53,7 +53,7 @@ Based on the threat analysis, the following design-related observations were mad
 - RBAC settings need appropriate configurations to be effective in their role of preventing unauthorized file read\write access. Nextcloud’s out of the box settings will not suffice to meet standard security controls. 
 - NextCloud’s optional anti-virus will need to be configured and enabled to meet standard security controls. Out of the box settings do not automatically enable this feature. 
 - NextCloud’s optional server-side file encryption will need to be utilized to meet standard security controls. Out of the box settings do not automatically enable this feature.
-- Five threats were found to need investigation before determining whether the threat is, in fact, mitigated within the OSS or if the threat highlights a vulnerability within the OSS. (They can be found by referring to the Level 2 DFD. Threats 37, 41, 45, 55, and 58.
+- Five threats were found to need investigation before determining whether the threat is, in fact, mitigated within the OSS or if the threat highlights a vulnerability within the OSS. (They can be found by referring to the Level 2 DFD Report. Threats 37, 41, 45, 55, and 58.
  
 <h3><a href="https://github.com/orgs/unosec/projects/8" target="_blank">Project Board</a> </h3>
 
