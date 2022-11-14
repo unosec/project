@@ -53,7 +53,7 @@ Based on the threat analysis, the following design-related observations were mad
 - RBAC settings need appropriate configurations to be effective in their role of preventing unauthorized file read\write access. Nextcloud’s out of the box settings will not suffice to meet standard security controls. 
 - NextCloud’s optional anti-virus will need to be configured and enabled to meet standard security controls. Out of the box settings do not automatically enable this feature. 
 - NextCloud’s optional server-side file encryption will need to be utilized to meet standard security controls. Out of the box settings do not automatically enable this feature.
-- Five threats were found to need investigation before determining whether the threat is, in fact, mitigated within the OSS or if the threat highlights a vulnerability within the OSS. (They can be found by referring to the Level 2 DFD Report. Threats 37, 41, 45, 55, and 58.
+- Five threats were found to need investigation before determining whether the threat is, in fact, mitigated within the OSS or if the threat highlights a vulnerability within the OSS. (They can be found by referring to the Level 2 DFD Report. Threats 37, 41, 45, 55, and 58.)
  
 <h3><a href="https://github.com/orgs/unosec/projects/8" target="_blank">Project Board</a> </h3>
 
@@ -65,5 +65,5 @@ During our weekly meeting with Dr. Gandhi we clarified that an external database
 
 Josh developed the initial Level 1 diagram and shared it with the team via Discord.  Jim added in additional details to the diagram.  Each team member documented mitigation strategies relevant to their scenarios or application familiarity. All members reviewed and submitted edits for the assignment .md and .tm7 files.
 
-The DFD .tm7 file was shared on github and team members just made effort to not make conflicting or simultaneous changes to the files. This also became a bit of an issue to try to arrange work on the file around each other. Moving forward, if one file is to be shared between the five of us, we will try to come up with a different sharing option.
+The DFD .tm7 file was shared on github and team members made an effort to not make conflicting or simultaneous changes to the files. This also became a bit of an issue because we had to arrange time to work on the file, rather than being able to work on the assignment at a convenient time. Moving forward, if one file is to be shared between the five of us, we will try to come up with a different strategy.
 
