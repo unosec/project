@@ -20,14 +20,14 @@ All scenarios are represented in the same DFD.
 Level 0 DFD
 -
 
-Mitigations strategies are described in the Level 2 DFD.
+Mitigation strategies are described in the Level 2 DFD.
 
 - <h3><a href="https://unosec.github.io/Level0DFD.htm" target="_blank">Link to Full Report</a> </h3>
 
 Level 1 DFD 
 -
 
-Mitigations strategies are described in the Level 2 DFD.
+Mitigation strategies are described in the Level 2 DFD.
 
 - <h3><a href="https://unosec.github.io/Level1DFD.htm" target="_blank">Link to Full Report</a> </h3>
 
