@@ -27,6 +27,7 @@ Findings - Manual Code Review
 Findings - Automated Code Review
 -
 
+<h3><a href="https://github.com/unosec/project/blob/main/automated_code_review/ZAP_report_Nextcloud.zip" target="_blank">ZAP report for Nextcloud server</a> </h3>
 
 Summary of Key Findings
 -
