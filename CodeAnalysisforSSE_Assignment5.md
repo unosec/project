@@ -106,6 +106,14 @@ The FtpConnection.php file contains code that specifies “ftp_connect” instea
 
 The calendar plug-in was scanned using SonarScanner.  No vulnerabilities were found.  Numerous "code smells" indicating possible coding style improvements were identified.
 
+
+**Finding 7:**
+
+![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan.png)
+
+The Talk plug-in was scanned using SonarScanner.  No vulnerabilities were found. Some "bugs" were found which can lead to an error or unexpected behavious at runtime. Also, "code smells" were found indicating possible coding style improvements were identified.
+
+
 <h3><a href="https://unosec.github.io/2022-11-22-ZAP-Report.html" target="_blank">ZAP 
 report for Nextcloud server</a> </h3>
 
