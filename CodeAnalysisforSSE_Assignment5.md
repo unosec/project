@@ -117,7 +117,7 @@ The Talk plug-in was scanned using SonarScanner. Some "bugs" were found which ca
 
 Some of the major bugs included:
 
-- Identical sub-expressions on both sides of operator "||": The use of uninitialized value: Using thesame values on either side of a binary operator is mostlt a mistake. In this case of the code it may be a copy and paste error or a bug or simply wasted code  and should be removed or simplified.
+- <bold>Identical sub-expressions on both sides of operator "||":</bold> The use of uninitialized value: Using thesame values on either side of a binary operator is mostlt a mistake. In this case of the code it may be a copy and paste error or a bug or simply wasted code  and should be removed or simplified.
 
 - Review the data-flow (Non Compliant code): In PHP initializing variables before their usage is not required. However, using uninitialized variables is considered bad practice and should be avoided because of the following reasons:
 
@@ -125,7 +125,7 @@ Some of the major bugs included:
 	- It is better to be explicit about those to avoid confusion.
 	- The interpreter raises a warning or a notice in many cases.
 
-- Add "<th>" headers to this "<table>": Assitive technologies such as sceen readers use "th" headers to provide some context when users navaigate a table. Without it users can get lost in the flow of data. 
+- Add "th" headers to this "table": Assitive technologies such as sceen readers use "th" headers to provide some context when users navaigate a table. Without it users can get lost in the flow of data. 
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan3.png)
 
