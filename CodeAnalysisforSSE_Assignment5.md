@@ -113,7 +113,25 @@ The calendar plug-in was scanned using SonarScanner.  No vulnerabilities were fo
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan2.png)
 
-The Talk plug-in was scanned using SonarScanner. Some "bugs" were found which can lead to an error or unexpected behavious at runtime. Most of the "bugs" are minor, which can slightly impact developer productivity such as long lines and switch staements not having atleast 3 cases. Also, "code smells" were found indicating possible coding style improvements were identified. No vulnerabilities were found in the code.
+The Talk plug-in was scanned using SonarScanner. Some "bugs" were found which can lead to an error or unexpected behavious at runtime. Most of the "bugs" are minor with 3 major bugs, of which minor bugs can slightly impact developer productivity such as long lines and switch staements not having atleast 3 cases and major bugs quality flaw which can highly impact the developer productivity such as uncovered piece of code, duplicated blocks, unused parameters and more. 
+
+![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan2.png)
+
+![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan3.png)
+
+Some of the major bugs included:
+
+- Identical sub-expressions on both sides of operator "||": The use of uninitialized value: Using thesame values on either side of a binary operator is mostlt a mistake. In this case of the code it may be a copy and paste error or a bug or simply wasted code  and should be removed or simplified.
+
+- Review the data-flow (Non Compliant code): In PHP initializing variables before their usage is not required. However, using uninitialized variables is considered bad practice and should be avoided because of the following reasons:
+
+	- The value and type of uninitialized variables depend on the context of their first usage. 
+	- It is better to be explicit about those to avoid confusion.
+	- The interpreter raises a warning or a notice in many cases.
+
+- Add "<th>" headers to this "<table>": Assitive technologies such as sceen readers use "<th>" headers to provide some context when users navaigate a table. Without it users can get lost in the flow of data. 
+
+Also, "code smells" were found indicating possible coding style improvements were identified. No vulnerabilities were found in the code.
 
 <h3><a href="https://unosec.github.io/2022-11-22-ZAP-Report.html" target="_blank">ZAP 
 report for Nextcloud server</a> </h3>
