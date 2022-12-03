@@ -127,18 +127,19 @@ SonarQube offers a [community edition](https://docs.sonarqube.org/latest/setup/g
 
 Docker must first be installed on Windows.  This was done by following [these instructions](https://docs.docker.com/desktop/install/windows-install/).  Note that this also required WSL2 ([Windows subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)) to be installed on the PC.
 
-After docker desktop is installed, the SonarQube docker images must be installed.  The first image installed was the base SonarQube website image.  This was installed by entering the following commands in powershell:
+After docker desktop is installed, the SonarQube docker images must be installed.  The first image installed was the base SonarQube website image.  This was installed and ran by entering the following commands in powershell:
 
 - ```docker pull sonarqube```
 - ```docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest```
 
-Once installed, the SonarQube website could be accessed by going to http://localhost:9000.  Following the SonarQube documentation, a "project" was then created in the SonarQube website.  This effectively provided a bucket for the results of the security performed in the next step.
+Once installed, the SonarQube website could be accessed by going to http://localhost:9000.  Following the SonarQube documentation, a "project" was then created in the SonarQube website.  This effectively provided a bucket for the results of the security analysis performed in the next step.
 
 Next, the SonarScanner software needed to be installed to provide the specific functionality to scan PHP files.  This was installed by entering the following commands in powershell:
 
 - ```docker pull sonarsource/sonar-scanner-cli```
 
 In order to then perform a scan, I did the following:
+
 - download the project to scan from github to a local folder.  In this case the folder was: C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV
 
 - ```docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest```
