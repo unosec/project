@@ -21,8 +21,16 @@ Scenarios
 Code Review Strategy
 -
 
+The group decided we would focus on looking for issues in the core Nextcloud server code base, as well as the two plugins used to for the calendar and mail functionality.  The goal would be be to find issues, specifically but not limited to those related to our 5 use case and assurance scenarios.  Additionally, but taking an assurance approach, we also looked to seek evidence of proper coding strategies which would then indicate best practices are understood and utilized.
+
+For automated review, the team primarily used [SonarQube/SonarSource](https://www.sonarqube.org/) on both Linux and Windows.  This is considered to be [one of the best tools for PHP static code analysis](https://phpmagazine.net/2020/10/top-php-security-and-malware-scanners.html).  A summary of the SonarQube process on Windows is listed in Appendix A.  As a secondary check to support the lack of significant findings, ZAP was also used.
+
+For manual review, the Linux grep utility was used to search the codebase.
+
 Findings - Manual Code Review
 -
+
+
 
 Findings - Automated Code Review
 -
@@ -69,4 +77,39 @@ Summary of Key Findings
 
 Contributions - OSS project pull requests, issues, discussions
 -
+
+
+Appendix A:  Using SonarQube on Windows
+-
+
+SonarQube offers a [community edition](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/) with a docker implementation.  This approach seemed appropriate for this project.
+
+Docker must first be installed on Windows.  This was done by following [these instructions](https://docs.docker.com/desktop/install/windows-install/).  Note that this also required WSL2 ([Windows subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)) to be installed on the PC.
+
+After docker desktop is installed, the SonarQube docker images must be installed.  The first image installed was the base SonarQube website image.  This was installed by entering the following commands in powershell:
+
+- ```docker pull sonarqube```
+- ```docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest```
+
+Once installed, the SonarQube website could be accessed by going to http://localhost:9000.  Following the SonarQube documentation, a "project" was then created in the SonarQube website.  This effectively provided a bucket for the results of the security performed in the next step.
+
+Next, the SonarScanner software needed to be installed to provide the specific functionality to scan PHP files.  This was installed by entering the following commands in powershell:
+
+- ```docker pull sonarsource/sonar-scanner-cli```
+
+In order to then perform a scan, I did the following:
+- download the project to scan from github to a local folder.  In this case the folder was: C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV
+
+- ```docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest```
+
+Run the following SonarScanner command in powershell:
+
+- ```docker run --rm -e SONAR_HOST_URL="http://172.31.144.1:9000/" -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=JimTest1" -e SONAR_LOGIN="sqp_71e6b2ac956b3da33d972f36f5d0f06b6fbb36df" -v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src" sonarsource/sonar-scanner-cli```
+
+The project key and the SONAR_LOGIN were both values provided by the SonarQube website when I created a test project.  **Two other important details**:
+
+- the SONAR\_HOST\_URL value could not reference "localhost".  In order for one docker image to communicate to the other docker image, and IP address value from "ipconfig" needed to be used.
+- the parameter -v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src" is important and it links a local folder to an internal folder used by the scanner software in the docker image.
+
+After running the SonarScanner docker command above, the scan ran for approximately 6 minutes.  When the scan was complete assessment details were available in the SonarQube website.
 
