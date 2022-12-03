@@ -23,6 +23,21 @@ Code Review Strategy
 
 The group decided we would focus on looking for issues in the core Nextcloud server code base, as well as the two plugins used to for the calendar and mail functionality.  The goal would be be to find issues, specifically but not limited to those related to our 5 use case and assurance scenarios.  Additionally, but taking an assurance approach, we also looked to seek evidence of proper coding strategies which would then indicate best practices are understood and utilized.
 
+The critical portions of code manually reviewed included file management, user management, encryption, and security controls implemented by NextCloud. These code sections were chosen due to their importance in security compliance and their ability to prevent our documented misuse cases. Our group focused on the assurance claims that NextCloud sufficiently prevents malicious file uploads, NextCloud Calendar form does not allow injection exploits, and NextCloud does not leak authentication information
+
+A number of common CWEs  were chosen to narrow our searches and improve our manual code review techniques. The following CWEs were identified as highly impactful and thus warranted manual review to verify their non-existence. 
+
+- CWE-287: Improper Authentication
+-	CWE-862: Missing Authorization
+-	CWE-798: Use of Hard-coded Credentials
+-	CWE-434: Unrestricted Upload of File with Dangerous Type
+-	CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+-	CWE-125: Out-of-bounds Read
+-	CWE-276: Incorrect Default Permissions
+-	CWE-94: Improper Control of Generation of Code ('Code Injection')
+-	CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+
+
 For automated review, the team primarily used [SonarQube/SonarSource](https://www.sonarqube.org/) on both Linux and Windows.  This is considered to be [one of the best tools for PHP static code analysis](https://phpmagazine.net/2020/10/top-php-security-and-malware-scanners.html).  A summary of the SonarQube process on Windows is listed in Appendix A.  As a secondary check to support the lack of significant findings, ZAP was also used.
 
 For manual review, the Linux grep utility was used to search the codebase.
