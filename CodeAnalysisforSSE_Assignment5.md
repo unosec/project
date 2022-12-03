@@ -50,8 +50,7 @@ For SQL Injection, one method a developer should use is parameterized queries.  
 
 In reviewing, what appears to be, the [data access code](https://github.com/nextcloud/3rdparty/blob/020d0d3892bd3b7296db8ed21448c834d33d5723/sabre/dav/lib/CalDAV/Backend/PDO.php) for the CalDAV functionality, the system does appear to use parameterized queries. Lines 253-254:
  
-```$stmt = $this->pdo->prepare('INSERT INTO '.$this->calendarTableName.' (synctoken, components) VALUES (1, ?)');
-$stmt->execute([$components]);```
+- ```$stmt = $this->pdo->prepare('INSERT INTO '.$this->calendarTableName.' (synctoken, components) VALUES (1, ?)'); $stmt->execute([$components]);```
 
 In searching the main codebase, evidence of parameterized queries was found in "apps\files_sharing\lib\External\Manager.php".  An instance of parameterized queries **not** being used was found in file "\lib\private\DB\Adapter.php", however this method was marked as deprecated.
 
