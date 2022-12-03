@@ -111,8 +111,7 @@ The calendar plug-in was scanned using SonarScanner.  No vulnerabilities were fo
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan.png)
 
-The Talk plug-in was scanned using SonarScanner.  No vulnerabilities were found. Some "bugs" were found which can lead to an error or unexpected behavious at runtime. Also, "code smells" were found indicating possible coding style improvements were identified.
-
+The Talk plug-in was scanned using SonarScanner. Some "bugs" were found which can lead to an error or unexpected behavious at runtime. Also, "code smells" were found indicating possible coding style improvements were identified. No vulnerabilities were found in the code.
 
 <h3><a href="https://unosec.github.io/2022-11-22-ZAP-Report.html" target="_blank">ZAP 
 report for Nextcloud server</a> </h3>
