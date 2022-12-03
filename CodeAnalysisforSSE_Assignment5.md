@@ -125,7 +125,7 @@ Some of the major bugs included:
 	- It is better to be explicit about those to avoid confusion.
 	- The interpreter raises a warning or a notice in many cases.
 
-- Add "<th>" headers to this "<table>": Assitive technologies such as sceen readers use "<th>" headers to provide some context when users navaigate a table. Without it users can get lost in the flow of data. 
+- Add "<th>" headers to this "<table>": Assitive technologies such as sceen readers use "th" headers to provide some context when users navaigate a table. Without it users can get lost in the flow of data. 
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan3.png)
 
