@@ -89,7 +89,7 @@ The FtpConnection.php file contains code that specifies “ftp_connect” instea
 
 ![image](https://github.com/unosec/project/blob/main/images/JimTest1.png)
 
-The calendar plug-in was scanned using SonarScanner.  No vulnerabilities were found.  Numerous "code smells" indicating possible coding style improvements.
+The calendar plug-in was scanned using SonarScanner.  No vulnerabilities were found.  Numerous "code smells" indicating possible coding style improvements were identified.
 
 <h3><a href="https://unosec.github.io/2022-11-22-ZAP-Report.html" target="_blank">ZAP 
 report for Nextcloud server</a> </h3>
@@ -107,6 +107,8 @@ We analyzed the code in relation to the following weaknesses:
 For CWE-89 and CWE-87 we performed manual reviews.  By taking a software assurance approach, we decided to investigate if we could find evidence supporting that the software, specifically the calendar functionality, was **not** susceptible to these weaknesses.  We found evidence that best practices for mitigating these weaknesses appeared to be in use.
 
 For CWE-478 we performed an automated review as summarized under Finding 1.  A missing default cause was found in UserManagement.php.
+
+An automated scan of the codebase for the calendar functionality found no vulnerabilities.
 
 <h3><a href="https://github.com/orgs/unosec/projects/5" target="_blank">Project Board</a> </h3>
 
