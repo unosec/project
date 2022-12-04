@@ -83,20 +83,20 @@ NextCloud’s InstalledVersions.php contained bug alerts in our automated code s
 
 NextCloud’s config.php contained bug notifications in scan results due to its usage of “Include” instead of “Include_Once”. This code section is utilized for reading the configuration file and current settings of the NextCloud server. Similar to previous findings of “Require” and Require_Once” the finding isn’t severe, but could impact security configuration settings being read and properly implemented if NextCloud should generate an error during this code’s execution. 
 
-**[Finding 5:](https://potato.0x69.xyz/security_hotspots?id=nextcloud&hotspots=AYSheRrrx29KzD1GMcQ0)**
+**[Finding 4:](https://potato.0x69.xyz/security_hotspots?id=nextcloud&hotspots=AYSheRrrx29KzD1GMcQ0)**
 
 ![image](https://github.com/unosec/project/blob/main/images/FTPConnection.png)
 
 The FtpConnection.php file contains code that specifies “ftp_connect” instead of “ftp_ssl-Connect” This code section is for NextCloud’s External file storage and could cause unencrypted file transfers to occur. We previously documented that secure file transfers are a critical security requirement in order to keep data confidentially and prevent eavesdropping attacks. 
 
-**Finding 6:**
+**Finding 5:**
 
 ![image](https://github.com/unosec/project/blob/main/images/JimTest1.png)
 
 The calendar plug-in was scanned using SonarScanner.  No vulnerabilities were found.  Numerous "code smells" indicating possible coding style improvements were identified.
 
 
-**Finding 7:**
+**Finding 6:**
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan.png)
 
@@ -142,7 +142,7 @@ An automated scan of the codebase for the calendar functionality found no vulner
 Contributions - OSS documentation, design changes, code changes, communications, etc.
 -
 
-[team notes - possibly open github issues on the nextcloud project to suggest fixing issues found in findings #1 or findings #5 - especially #5 - or indicate why we chose not to do so]
+[team notes - possibly open github issues on the nextcloud project to suggest fixing issues found in findings #1 or findings #4 - especially #4 - or indicate why we chose not to do so]
 
 Reflections
 
