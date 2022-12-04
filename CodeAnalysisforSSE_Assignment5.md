@@ -123,7 +123,6 @@ Some of the major bugs included:
 
 
 ### Summary of Key Findings
-- 
 
 We analyzed the code in relation to the following weaknesses:
 
@@ -141,14 +140,12 @@ An automated scan of the code for the Calendar, Talk, and Mail functionalities f
 
 
 ### Contributions - OSS documentation, design changes, code changes, communications, etc.
--
 
 [team notes - possibly open github issues on the nextcloud project to suggest fixing issues found in findings #1 or findings #4 - especially #4 - or indicate why we chose not to do so]
 
 ### Reflections
 
 ### Appendix A: Using SonarQube on Windows
--
 
 SonarQube offers a [community edition](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/) with a docker implementation.  This approach was appropriate for this project.
 
