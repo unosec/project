@@ -158,7 +158,7 @@ An automated scan of the codebase for the calendar functionality found no vulner
 Contributions - OSS project pull requests, issues, discussions
 -
 
-[team notes - possibly open github issues on the nextcloud project to suggest fixing issues found in findings #1 or findings #5 - especially #5 - or indicate why we chose not to do so]
+[team notes - possibly open github issues on the nextcloud project to suggest fixing issues found in findings #1 or findings #4 - especially #4 - or indicate why we chose not to do so]
 
 Appendix A:  Using SonarQube on Windows
 -
