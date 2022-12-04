@@ -61,7 +61,7 @@ In searching the Server code, evidence of parameterized queries was found in fil
 
 
 ### Automated Code Review
-For automated review, [SonarQube/SonarSource](https://www.sonarqube.org/) was used on both Linux and Windows.  This is considered to be [one of the best tools for PHP static code analysis](https://phpmagazine.net/2020/10/top-php-security-and-malware-scanners.html).  A description of the Windows SonarQube installation and use is described in [Appendix A](https://github.com/unosec/project/blob/main/CodeAnalysisforSSE_Assignment5.md#appendix-a--using-sonarqube-on-windows). A secondary scanning tool that was used was [ZAP](https://www.zaproxy.org/). Because ZAP is a web application scanner, [the results](https://unosec.github.io/2022-11-22-ZAP-Report.html) were not as helpful so our time was spent going through the SonarQube findings instead.
+For automated review, [SonarQube/SonarSource/SonarScanner](https://www.sonarqube.org/) was used on both Linux and Windows.  This is considered to be [one of the best tools for PHP static code analysis](https://phpmagazine.net/2020/10/top-php-security-and-malware-scanners.html).  A description of the Windows SonarQube installation and use is described in [Appendix A](https://github.com/unosec/project/blob/main/CodeAnalysisforSSE_Assignment5.md#appendix-a--using-sonarqube-on-windows). A secondary scanning tool that was used was [ZAP](https://www.zaproxy.org/). Because ZAP is a web application scanner, [the results](https://unosec.github.io/2022-11-22-ZAP-Report.html) were not as helpful so our time was spent going through the SonarQube findings instead.
 
 The Nextcloud Server code, as well as the code used for the Calendar, Talk, and Mail apps were scanned and reviewed. 
 
@@ -95,35 +95,34 @@ The _FtpConnection.php_ file contains code that specifies “ftp_connect” inst
 
 ![image](https://github.com/unosec/project/blob/main/images/JimTest1.png)
 
-The calendar plug-in was scanned using SonarScanner.  No vulnerabilities were found.  Numerous "code smells" indicating possible coding style improvements were identified.
+The Calendar plug-in was scanned using SonarScanner. No vulnerabilities were found. Numerous "code smells", indicating possible coding style improvements, were identified.
 
 
-**Finding 6:**
+*Finding 6:*
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan.png)
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan2.png)
 
-The Talk plug-in was scanned using SonarScanner. Some "bugs" were found which can lead to an error or unexpected behavious at runtime. Most of the "bugs" are minor with 3 major bugs, of which minor bugs can slightly impact developer productivity such as long lines and switch staements not having atleast 3 cases and major bugs quality flaw which can highly impact the developer productivity such as uncovered piece of code, duplicated blocks, unused parameters and more. 
+The Talk plug-in was scanned using SonarScanner. Some "bugs" were found which can lead to an error or unexpected behaviors at runtime. Most of the "bugs" were minor with only three major bugs. Minor bugs, such as long lines and switch statements not having at least three cases, can slightly impact developer productivity. Major bugs, such as uncovered pieces of code, duplicated blocks, unused parameters, etc., are quality flaws that can highly impact the developer productivity.
 
 Some of the major bugs included:
 
-- <bold>Identical sub-expressions on both sides of operator "||":</bold> The use of uninitialized value: Using thesame values on either side of a binary operator is mostlt a mistake. In this case of the code it may be a copy and paste error or a bug or simply wasted code  and should be removed or simplified.
+- **Identical sub-expressions on both sides of operator "||":** "Using the same value on either side of a binary operator is almost always a mistake. In the case of logical operators, it is either a copy/paste error and therefore a bug, or it is simply wasted code, and should be simplified."
 
-- Review the data-flow (Non Compliant code): In PHP initializing variables before their usage is not required. However, using uninitialized variables is considered bad practice and should be avoided because of the following reasons:
+- **Review the data-flow - use of uninitialized value:** In PHP initializing variables before their usage is not required. "However, using uninitialized variables is considered bad practice and should be avoided because of the following reasons:
 
-	- The value and type of uninitialized variables depend on the context of their first usage. 
-	- It is better to be explicit about those to avoid confusion.
-	- The interpreter raises a warning or a notice in many cases.
+	- The value and type of uninitialized variables depend on the context of their first usage. It is better to be explicit about those to avoid confusion.
+	- The interpreter raises a warning or a notice in many cases."
 
-- Add "th" headers to this "table": Assitive technologies such as sceen readers use "th" headers to provide some context when users navaigate a table. Without it users can get lost in the flow of data. 
+- **Add "`<th>`" headers to this "`<table>`":** "Assistive technologies, such as sceen readers use `<th>` headers to provide some context when users navaigate a table." Without it, users can get lost in the flow of data. 
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan3.png)
 
-Also, "code smells" were found indicating possible coding style improvements were identified. No vulnerabilities were found in the code.
+"Code smells" were found, indicating possible coding style improvements, were identified. No vulnerabilities were found in the code.
 
 
-Summary of Key Findings
+### Summary of Key Findings
 - 
 
 We analyzed the code in relation to the following weaknesses:
@@ -132,57 +131,59 @@ We analyzed the code in relation to the following weaknesses:
 - [CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](https://cwe.mitre.org/data/definitions/89.html)
 - [CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')](https://cwe.mitre.org/data/definitions/74.html)
 
-For CWE-89 and CWE-87 we performed manual reviews.  By taking a software assurance approach, we decided to investigate if we could find evidence supporting that the software, specifically the calendar functionality, was **not** susceptible to these weaknesses.  We found evidence that best practices for mitigating these weaknesses appeared to be in use.
+We performed manual reviews for CWE-89 and CWE-74.  By taking a software assurance approach, we investigated if we could find supporting evidence that the software, specifically the calendar functionality, was **not** susceptible to these weaknesses.  We found evidence that best practices for mitigating these weaknesses appeared to be in use.
 
-For CWE-478 we performed an automated review as summarized under Finding 1.  A missing default cause was found in UserManagement.php.
+For CWE-478 we performed an automated review, as summarized under _Finding 1_.  A missing default case was found in _UserManagement.php_.
 
-An automated scan of the codebase for the calendar functionality found no vulnerabilities.
-
-
+An automated scan of the code for the Calendar, Talk, and Mail functionalities found no vulnerabilities.
 
 
-Contributions - OSS documentation, design changes, code changes, communications, etc.
+
+
+### Contributions - OSS documentation, design changes, code changes, communications, etc.
 -
 
 [team notes - possibly open github issues on the nextcloud project to suggest fixing issues found in findings #1 or findings #4 - especially #4 - or indicate why we chose not to do so]
 
-Reflections
+### Reflections
 
-Appendix A:  Using SonarQube on Windows
+### Appendix A: Using SonarQube on Windows
 -
 
-SonarQube offers a [community edition](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/) with a docker implementation.  This approach seemed appropriate for this project.
+SonarQube offers a [community edition](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/) with a docker implementation.  This approach was appropriate for this project.
 
-Docker must first be installed on Windows.  This was done by following [these instructions](https://docs.docker.com/desktop/install/windows-install/).  Note that this also required WSL2 ([Windows subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)) to be installed on the PC.
+1. Docker must first be installed on Windows.  This was completed by following [these instructions](https://docs.docker.com/desktop/install/windows-install/).  **Note**: SonarQube also requires that WSL2 ([Windows subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)) be installed on the PC.
 
-After docker desktop is installed, the SonarQube docker images must be installed.  The first image installed was the base SonarQube website image.  This was installed and ran by entering the following commands in powershell:
-
-
-```docker pull sonarqube docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest```
+2. After Docker Desktop is installed, the SonarQube docker images must be installed.  The first image installed was the base SonarQube website image.  This was installed and run by entering the following commands in powershell:
 
 
-Once installed, the SonarQube website could be accessed by going to http://localhost:9000.  Following the SonarQube documentation, a "project" was then created in the SonarQube website.  This effectively provided a bucket for the results of the security analysis performed in the next step.
+```
+docker pull sonarqube
+docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+```
 
-Next, the SonarScanner software needed to be installed to provide the specific functionality to scan PHP files.  This was installed by entering the following commands in powershell:
+3. Once installed, the SonarQube website is accessed by going to http://localhost:9000.  A "project" is then created in the SonarQube website.  This effectively provides a bucket for the results of the security analysis performed.
+
+4. The SonarScanner software needs to be installed to provide the specific functionality for scanning PHP files.  This is installed by entering the following command in powershell:
 
 ```docker pull sonarsource/sonar-scanner-cli```
 
-In order to then perform a scan, I did the following:
+5. In order to perform a scan, the following was needed:
 
-- download the project to scan from github to a local folder.  In this case the folder was: C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV
+   - Download, from github, the project to scan and save it to a local folder.  In this case the folder was: *C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV*
 
 ```docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest```
 
-Run the following SonarScanner command in powershell:
+   - Run the following SonarScanner command in powershell:
 
 ```docker run --rm -e SONAR_HOST_URL="http://172.31.144.1:9000/" -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=JimTest1" -e SONAR_LOGIN="sqp_71e6b2ac956b3da33d972f36f5d0f06b6fbb36df" -v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src" sonarsource/sonar-scanner-cli```
 
-The project key and the SONAR_LOGIN were both values provided by the SonarQube website when I created a test project.  **Two other important details**:
+The *project key* and the *SONAR_LOGIN* are both values provided by the SonarQube website when a test project is created.  **Two other important details**:
 
-- the SONAR\_HOST\_URL value could not reference "localhost".  In order for one docker image to communicate to the other docker image, and IP address value from "ipconfig" needed to be used.
-- the parameter -v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src" is important and it links a local folder to an internal folder used by the scanner software in the docker image.
+     - the *SONAR\_HOST\_URL* value could not reference "localhost".  In order for one docker image to communicate with the other docker image, an IP address value from "ipconfig" needed to be used.
+     - the parameter `-v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src"` is important. It links an internal folder, used by the scanner software in the docker image, to a local folder.
 
-After running the SonarScanner docker command above, the scan ran for approximately 6 minutes.  When the scan was complete assessment details were available in the SonarQube website.
+After running the SonarScanner docker command above, the scan ran for approximately 6 minutes.  When the scan was complete, assessment details were available on the SonarQube website.
 
 [Return](https://github.com/unosec/project/blob/main/CodeAnalysisforSSE_Assignment5.md#automated-code-review)
 
