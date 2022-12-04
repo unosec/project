@@ -2,6 +2,7 @@
 
 
 ### Assignment Overview / Project Board
+
 This document provides an overview of our code review strategy, as well as findings from both our automated code scanning and manual code review of critical security functions. The code review is of [Nextcloud](https://github.com/nextcloud), our semester-long, open-source software (OSS) project.
 
 [Project Board](https://github.com/orgs/unosec/projects/5)
@@ -62,7 +63,7 @@ In searching the Server code, evidence of parameterized queries was found in fil
 ### Automated Code Review
 The Nextcloud Server code, as well as the code used for the Calendar, Talk, and Mail apps were scanned and reviewed.  
 
-For automated review, [SonarQube/SonarSource](https://www.sonarqube.org/) was used on both Linux and Windows.  This is considered to be [one of the best tools for PHP static code analysis](https://phpmagazine.net/2020/10/top-php-security-and-malware-scanners.html).  A description of the Windows SonarQube installation and use is listed in [Appendix A](https://github.com/unosec/project/blob/main/CodeAnalysisforSSE_Assignment5.md#appendix-a--using-sonarqube-on-windows). [ZAP](https://www.zaproxy.org/) was used as a secondary scanning tool. Because ZAP is a web application scanner, [the results](https://unosec.github.io/2022-11-22-ZAP-Report.html) were not as helpful so all of our time was spent going through the SonarQube findings instead.
+For automated review, [SonarQube/SonarSource](https://www.sonarqube.org/) was used on both Linux and Windows.  This is considered to be [one of the best tools for PHP static code analysis](https://phpmagazine.net/2020/10/top-php-security-and-malware-scanners.html).  A description of the Windows SonarQube installation and use is described in [Appendix A](https://github.com/unosec/project/blob/main/CodeAnalysisforSSE_Assignment5.md#appendix-a--using-sonarqube-on-windows). A secondary scanning tool that was used was [ZAP](https://www.zaproxy.org/). Because ZAP is a web application scanner, [the results](https://unosec.github.io/2022-11-22-ZAP-Report.html) were not as helpful so our time was spent going through the SonarQube findings instead.
 
 ##### SonarQube Scan Review
 
@@ -184,4 +185,6 @@ The project key and the SONAR_LOGIN were both values provided by the SonarQube w
 - the parameter -v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src" is important and it links a local folder to an internal folder used by the scanner software in the docker image.
 
 After running the SonarScanner docker command above, the scan ran for approximately 6 minutes.  When the scan was complete assessment details were available in the SonarQube website.
+
+[Return](https://github.com/unosec/project/blob/main/CodeAnalysisforSSE_Assignment5.md#automated-code-review)
 
