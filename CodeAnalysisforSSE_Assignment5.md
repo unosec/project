@@ -2,7 +2,7 @@
 
 
 ### Assignment Overview / Project Board
-This document provides an overview of our code review strategy, as well as findings from our manual code review of critical security functions and findings from our automated code scanning. The code review is of [Nextcloud](https://github.com/nextcloud) our semester-long, open-source software (OSS) project.
+This document provides an overview of our code review strategy, as well as findings from both our automated code scanning and manual code review of critical security functions. The code review is of [Nextcloud](https://github.com/nextcloud), our semester-long, open-source software (OSS) project.
 
 [Project Board](https://github.com/orgs/unosec/projects/5)
 
@@ -28,12 +28,12 @@ After reviewing the misuse cases created in [Assignment 2](/RequirementsforSSE_A
 ### Manual Code Review
 The critical portions of code, manually reviewed, included file management, user management, encryption, and security controls implemented by Nextcloud. These code sections were chosen due to their importance in security compliance and their ability to prevent the documented misuse cases. Because of the severity of a possible vulnerability, focus was placed on the following assurance claims:
 - Nextcloud sufficiently prevents malicious file uploads.
-- NextCloud does not leak authentication information.
+- Nextcloud does not leak authentication information.
 - The Nextcloud calendar form does not allow injection exploits.
 
 For manual review, the Linux grep utility was used to search the codebase.
 
-Often database-driven website software is susceptible to [CWE-89: SQL Injection weakness](https://cwe.mitre.org/data/definitions/89.html) or [CWE-74: HTML/Javascript injection attacks](https://cwe.mitre.org/data/definitions/74.html). By taking a software assurance approach, investigation was taken into whether the software, specifically the calendar functionality, was susceptible or not to these weaknesses.
+Often database-driven website software is susceptible to [CWE-89: SQL Injection weakness](https://cwe.mitre.org/data/definitions/89.html) or [CWE-74: HTML/Javascript Injection attacks](https://cwe.mitre.org/data/definitions/74.html). By taking a software assurance approach, investigation was focused on whether or not the software, specifically the calendar functionality, was susceptible to these weaknesses.
 
 In PHP code, a developer should use the "htmlspecialchars" function when outputting data to a web page. This function will escape the output and help prevent cross-site scripting attacks. 
 
@@ -41,7 +41,7 @@ In PHP code, a developer should use the "htmlspecialchars" function when outputt
 
 This function was found being used [on line 78](https://github.com/nextcloud/3rdparty/blob/master/sabre/dav/lib/DAV/Browser/HtmlOutputHelper.php).
 
-In searching the Server code, this function was also used in files such as Setup.php, Manager.php, OC_Util.php, and EMailTemplate.php.
+In searching the Server code, this function was also used in files such as _Setup.php_, _Manager.php_, *OC_Util.php*, and _EMailTemplate.php_.
 
 This evidence would support that efforts have been made to mitigate CWE-89.
 
@@ -51,9 +51,12 @@ For SQL Injection, one method a developer should use is parameterized queries.  
 
 In reviewing (what seems to be) the [data access code](https://github.com/nextcloud/3rdparty/blob/020d0d3892bd3b7296db8ed21448c834d33d5723/sabre/dav/lib/CalDAV/Backend/PDO.php) for the CalDAV functionality, the system appears to use parameterized queries. Lines 253-254:
  
-```$stmt = $this->pdo->prepare('INSERT INTO '.$this->calendarTableName.' (synctoken, components) VALUES (1, ?)'); $stmt->execute([$components]);```
+```  
+$stmt = $this->pdo->prepare('INSERT INTO '.$this->calendarTableName.' (synctoken, components) VALUES (1, ?)');  
+$stmt->execute([$components]);  
+```
 
-In searching the Server code, evidence of parameterized queries was found in file _\apps\files_sharing\lib\External\Manager.php_. An instance of parameterized queries **not** being used was found in file _\lib\private\DB\Adapter.php_, however this method was marked as deprecated.
+In searching the Server code, evidence of parameterized queries was found in file _\apps\files_sharing\lib\External\Manager.php_. An instance of parameterized queries **not** being used was found in file _\lib\private\DB\Adapter.php_; however this method was marked as deprecated.
 
 
 ### Automated Code Review
