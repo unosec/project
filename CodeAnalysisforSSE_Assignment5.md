@@ -61,39 +61,37 @@ In searching the Server code, evidence of parameterized queries was found in fil
 
 
 ### Automated Code Review
-The Nextcloud Server code, as well as the code used for the Calendar, Talk, and Mail apps were scanned and reviewed.  
-
 For automated review, [SonarQube/SonarSource](https://www.sonarqube.org/) was used on both Linux and Windows.  This is considered to be [one of the best tools for PHP static code analysis](https://phpmagazine.net/2020/10/top-php-security-and-malware-scanners.html).  A description of the Windows SonarQube installation and use is described in [Appendix A](https://github.com/unosec/project/blob/main/CodeAnalysisforSSE_Assignment5.md#appendix-a--using-sonarqube-on-windows). A secondary scanning tool that was used was [ZAP](https://www.zaproxy.org/). Because ZAP is a web application scanner, [the results](https://unosec.github.io/2022-11-22-ZAP-Report.html) were not as helpful so our time was spent going through the SonarQube findings instead.
+
+The Nextcloud Server code, as well as the code used for the Calendar, Talk, and Mail apps were scanned and reviewed. 
 
 ##### SonarQube Scan Review
 
-**[Finding 1:](https://potato.0x69.xyz/project/issues?files=apps%2Fadmin_audit%2Flib%2FActions%2FUserManagement.php&resolved=false&id=nextcloud&open=AYSheR9xx29KzD1GMcyt)**
+*[Finding 1:](https://potato.0x69.xyz/project/issues?files=apps%2Fadmin_audit%2Flib%2FActions%2FUserManagement.php&resolved=false&id=nextcloud&open=AYSheR9xx29KzD1GMcyt)*
 
 ![image](https://github.com/unosec/project/blob/main/images/UserManagement.png)
 
-An minor issue with NextCloud’s UserManagement.php file was discovered related to [CWE-478 (Missing Default Case in Switch Statement)](https://cwe.mitre.org/data/definitions/478.html). While this typically isn’t a critical issue, the potential for unintended impact and misconfigurations is increased due to this section of code controlling the audit logging of NextCloud user’s and their activities while using the system. In previous assignments, we recognized NextCloud’s auditing and logging as a critical security component due to its ability to detect and monitor potential threats and attack vectors. 
+A minor issue with Nextcloud’s _UserManagement.php_ file was discovered related to [CWE-478: Missing Default Case in Multiple Condition Expression](https://cwe.mitre.org/data/definitions/478.html). While this typically is not a critical issue, the potential for unintended impact and misconfigurations is increased due to this section of code controlling the audit logging of system activities of Nextcloud users. In previous assignments, we recognized Nextcloud’s auditing and logging as a critical security component due to its ability to detect and monitor potential threats and attack vectors. 
 
-
-**[Finding 2:](https://potato.0x69.xyz/project/issues?files=apps%2Fencryption%2Fcomposer%2Fcomposer%2FInstalledVersions.php&resolved=false&id=nextcloud&open=AYSheSwVx29KzD1GMeCp)**
+*[Finding 2:](https://potato.0x69.xyz/project/issues?files=apps%2Fencryption%2Fcomposer%2Fcomposer%2FInstalledVersions.php&resolved=false&id=nextcloud&open=AYSheSwVx29KzD1GMeCp)*
 
 ![image](https://github.com/unosec/project/blob/main/images/InstalledVersions.png)
 
-NextCloud’s InstalledVersions.php contained bug alerts in our automated code scans due to its usage of “Require” instead of “Require_Once”. This code section is utilized for implementing the encryption of files saved via NextCloud’s file feature. File encryption was documented as a critical security function preventing unauthorized access and several other mis-use cases. While the difference between “Require” and “Require_Once“ is minor, the latter option would only generate warnings if improper vendor installed encryption mechanisms were implemented while the current code could generate fatal errors impacting both the confidentiality and availability of NextCloud’s file features. 
+Nextcloud’s _InstalledVersions.php_ contained bug alerts in our automated code scans due to its usage of “Require” instead of “Require_Once”. This code section is utilized for implementing the encryption of files saved via Nextcloud’s File feature. File encryption was documented as a critical security function preventing unauthorized access and several other misuse cases. While the difference between “Require” and “Require_Once“ is minor, the latter option would only generate warnings if improper, vendor-installed, encryption mechanisms were implemented. The current code could generate fatal errors impacting both the confidentiality and availability of Nextcloud’s File features. 
 
-
-**[Finding 3:](https://potato.0x69.xyz/project/issues?files=lib%2Fprivate%2FConfig.php&resolved=false&id=nextcloud&open=AYSheUOox29KzD1GMhPz)**
+*[Finding 3:](https://potato.0x69.xyz/project/issues?files=lib%2Fprivate%2FConfig.php&resolved=false&id=nextcloud&open=AYSheUOox29KzD1GMhPz)*
 
 ![image](https://github.com/unosec/project/blob/main/images/config.png)
 
-NextCloud’s config.php contained bug notifications in scan results due to its usage of “Include” instead of “Include_Once”. This code section is utilized for reading the configuration file and current settings of the NextCloud server. Similar to previous findings of “Require” and Require_Once” the finding isn’t severe, but could impact security configuration settings being read and properly implemented if NextCloud should generate an error during this code’s execution. 
+Nextcloud’s _config.php_ contained bug notifications in the scan results due to its usage of “Include” instead of “Include_Once”. This code section is utilized for reading the configuration file and current settings of the Nextcloud server. Similar to the previous findings of “Require” and Require_Once”, the issue is not severe, but could impact security configuration settings being read and properly implemented if Nextcloud should generate an error during this code’s execution. 
 
-**[Finding 4:](https://potato.0x69.xyz/security_hotspots?id=nextcloud&hotspots=AYSheRrrx29KzD1GMcQ0)**
+*[Finding 4:](https://potato.0x69.xyz/security_hotspots?id=nextcloud&hotspots=AYSheRrrx29KzD1GMcQ0)*
 
 ![image](https://github.com/unosec/project/blob/main/images/FTPConnection.png)
 
-The FtpConnection.php file contains code that specifies “ftp_connect” instead of “ftp_ssl-Connect” This code section is for NextCloud’s External file storage and could cause unencrypted file transfers to occur. We previously documented that secure file transfers are a critical security requirement in order to keep data confidentially and prevent eavesdropping attacks. 
+The _FtpConnection.php_ file contains code that specifies “ftp_connect” instead of “ftp_ssl-Connect”. This code section is for Nextcloud’s external file storage and could cause unencrypted file transfers to occur. We previously documented that secure file transfers are a critical security requirement in order to keep data confidential and prevent eavesdropping attacks. 
 
-**Finding 5:**
+*Finding 5:*
 
 ![image](https://github.com/unosec/project/blob/main/images/JimTest1.png)
 
