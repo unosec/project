@@ -167,7 +167,20 @@ An automated scan of the code for the Calendar, Talk, and Mail functionalities f
 
 ### Contributions - OSS documentation, design changes, code changes, communications, etc.
 
-[team notes - possibly open github issues on the nextcloud project to suggest fixing issues found in findings #1 or findings #4 - especially #4 - or indicate why we chose not to do so]
+Because Nextcloud is a very mature program, when reporting a vulnerability multiple steps must be taken.
+
+![image](/images/ReportingAVulnerability.png)
+
+Per the steps, we noted the [threat model](https://nextcloud.com/security/threat-model/) and read the responsible disclosure guidelines.
+
+![image](/images/DisclosureGuidelines.png)
+
+After reviewing the mandated literature, as well as the information listed on the [hackerone](https://hackerone.com/nextcloud?type=team) site, we decided to submit a report regarding _Finding 4_.
+
+![image](/images/FTPSubmission.png)
+
+(Please ignore their request listed on the bottom of the image.)
+
 
 ### Reflections
 
