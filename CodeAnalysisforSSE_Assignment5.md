@@ -65,7 +65,7 @@ For automated review, [SonarQube/SonarSource/SonarScanner](https://www.sonarqube
 
 The Nextcloud Server code, as well as the code used for the Calendar, Talk, and Mail apps were scanned and reviewed. 
 
-##### SonarQube Scan Review
+##### SonarQube Scan Review:
 
 ---
 *[Finding 1:](https://potato.0x69.xyz/project/issues?files=apps%2Fadmin_audit%2Flib%2FActions%2FUserManagement.php&resolved=false&id=nextcloud&open=AYSheR9xx29KzD1GMcyt)*
@@ -195,8 +195,7 @@ _What challenges did we expect before starting code review?_
 - Challenges regarding the third-party applications and what vulnerabilities they may add to the Nextcloud platform itself. How can these vulnerabilities be remediated or isolated even when the developers are unwilling to fix them?
 
 _How did our code review strategy attempt to address the anticipated challenges?_  
-The strategy was to break the code into portions that could be reviewed by multiple people. The three apps were also reviewed separately.
-
+The strategy was to break the code into portions that could be reviewed by multiple people. The three apps were also reviewed separately.  
 By reviewing the scanning results, we could sort the findings by using CWE tags. This helped narrow down the important issues that were found by the scanning tool.
 
 ---
@@ -207,6 +206,7 @@ Talbot analyzed the automated scan findings from the Talk plug-in.
 Larissa analyzed the automated scan findings from the Mail plug-in and reported the vulnerability to Nextcloud.
 All contributed to the "Summary of Key Findings" and "Reflections" sections of the assignment.
 
+---
 Thankfully, we ran into no issues during this assignment as our plan-of-attack executed smoothly. We will be conducting one last Zoom meeting to discuss our plans for the Presentation assignment, as well as continuing to discuss any questions through our Discord channel.
 
 ### Appendix A: Using SonarQube on Windows
