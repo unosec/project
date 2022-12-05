@@ -27,7 +27,7 @@ After reviewing the misuse cases created in [Assignment 2](/RequirementsforSSE_A
 
 
 ### Manual Code Review
-The critical portions of code, manually reviewed, included file management, user management, encryption, and security controls implemented by Nextcloud. These code sections were chosen due to their importance in security compliance and their ability to prevent the documented misuse cases. Because of the severity of a possible vulnerability, focus was placed on the following assurance claims:
+The critical portions of manually reviewed code included file management, user management, encryption, and security controls implemented by Nextcloud. These code sections were chosen due to their importance in security compliance and their ability to prevent the documented misuse cases. Because of the severity of a possible vulnerability, focus was placed on the following assurance claims:
 - Nextcloud sufficiently prevents malicious file uploads.
 - Nextcloud does not leak authentication information.
 - The Nextcloud calendar form does not allow injection exploits.
@@ -46,7 +46,7 @@ In searching the Server code, this function was also used in files such as _Setu
 
 This evidence would support that efforts have been made to mitigate CWE-89.
 
-For SQL Injection, one method a developer should use is parameterized queries.  The code was searched for SQL-like syntax like:
+For SQL Injection, one method a developer should use is parameterized queries.  The code was searched for SQL syntax like:
 
 ```grep -r "INSERT INTO"```
 
@@ -67,37 +67,38 @@ The Nextcloud Server code, as well as the code used for the Calendar, Talk, and 
 
 ##### SonarQube Scan Review
 
+---
 *[Finding 1:](https://potato.0x69.xyz/project/issues?files=apps%2Fadmin_audit%2Flib%2FActions%2FUserManagement.php&resolved=false&id=nextcloud&open=AYSheR9xx29KzD1GMcyt)*
 
 ![image](https://github.com/unosec/project/blob/main/images/UserManagement.png)
 
 A minor issue with Nextcloud’s _UserManagement.php_ file was discovered related to [CWE-478: Missing Default Case in Multiple Condition Expression](https://cwe.mitre.org/data/definitions/478.html). While this typically is not a critical issue, the potential for unintended impact and misconfigurations is increased due to this section of code controlling the audit logging of system activities of Nextcloud users. In previous assignments, we recognized Nextcloud’s auditing and logging as a critical security component due to its ability to detect and monitor potential threats and attack vectors. 
-
+---
 *[Finding 2:](https://potato.0x69.xyz/project/issues?files=apps%2Fencryption%2Fcomposer%2Fcomposer%2FInstalledVersions.php&resolved=false&id=nextcloud&open=AYSheSwVx29KzD1GMeCp)*
 
 ![image](https://github.com/unosec/project/blob/main/images/InstalledVersions.png)
 
 Nextcloud’s _InstalledVersions.php_ contained bug alerts in our automated code scans due to its usage of “Require” instead of “Require_Once”. This code section is utilized for implementing the encryption of files saved via Nextcloud’s File feature. File encryption was documented as a critical security function preventing unauthorized access and several other misuse cases. While the difference between “Require” and “Require_Once“ is minor, the latter option would only generate warnings if improper, vendor-installed, encryption mechanisms were implemented. The current code could generate fatal errors impacting both the confidentiality and availability of Nextcloud’s File features. 
-
+---
 *[Finding 3:](https://potato.0x69.xyz/project/issues?files=lib%2Fprivate%2FConfig.php&resolved=false&id=nextcloud&open=AYSheUOox29KzD1GMhPz)*
 
 ![image](https://github.com/unosec/project/blob/main/images/config.png)
 
 Nextcloud’s _config.php_ contained bug notifications in the scan results due to its usage of “Include” instead of “Include_Once”. This code section is utilized for reading the configuration file and current settings of the Nextcloud server. Similar to the previous findings of “Require” and Require_Once”, the issue is not severe, but could impact security configuration settings being read and properly implemented if Nextcloud should generate an error during this code’s execution. 
-
+---
 *[Finding 4:](https://potato.0x69.xyz/security_hotspots?id=nextcloud&hotspots=AYSheRrrx29KzD1GMcQ0)*
 
 ![image](https://github.com/unosec/project/blob/main/images/FTPConnection.png)
 
 The _FtpConnection.php_ file contains code that specifies “ftp_connect” instead of “ftp_ssl-Connect”. This code section is for Nextcloud’s external file storage and could cause unencrypted file transfers to occur. We previously documented that secure file transfers are a critical security requirement in order to keep data confidential and prevent eavesdropping attacks. 
-
+---
 *Finding 5:*
 
 ![image](https://github.com/unosec/project/blob/main/images/JimTest1.png)
 
 The Calendar plug-in was scanned using SonarScanner. No "Vulnerabilities" were found. Numerous "Code Smells", indicating possible coding style improvements, were identified.
 
-
+---
 *Finding 6:*
 
 ![image](https://github.com/unosec/project/blob/main/images/Talk_App_scan.png)
@@ -121,7 +122,7 @@ Some of the major bugs included:
 
 "Code Smells" were found, indicating possible coding style improvements, were identified. No "Vulnerabilities" were found in the code.
 
-
+---
 *Finding 7:*
 
 The Mail plug-in was scanned using the SonarScanner software. The app received passing marks but did show a few minor "Bugs" and thousands of "Code Smells".
@@ -134,7 +135,7 @@ The majority of the "Hotspots Reviewed" issues are used in the _test_ directory 
 
 ![image](/images/MailPermission.png)
 
-The permissions are being tested within a _try_ block and give the _group_ and _others_ rights read-only permission. This should protect the program from exposure to [CWE-732: Incorrect Permission Assignment for Critical Resource](https://cwe.mitre.org/data/definitions/732.html).
+The permissions are being tested within a _try_ block and give the _group_ and _others_ read-only permission. This should protect the program from exposure to [CWE-732: Incorrect Permission Assignment for Critical Resource](https://cwe.mitre.org/data/definitions/732.html).
 
 Two of the "Low" priorities refer to using "https" instead of "http". While this practice is the most secure option, it appears that the two issues refer to a line of code that is being used as an "insecure fallback" option when trying to access the URL of an email address. The "https" protocol is also being used in the same function.
 
@@ -184,21 +185,21 @@ After reviewing the mandated literature, as well as the information listed on th
 
 ### Reflections
 
-_What challenges did we expect before starting code review?_:
+_What challenges did we expect before starting code review?_
 - With a very large, mature program, what vulnerabilities will we actually find? And how much work will it be to understand the issues found? As stated in [Secure Programming with Static Analysis](https://learning.oreilly.com/library/view/secure-programming-with/9780321424778/ch02.html), "After a project has begun, revisiting code purely to make adjustments to reduce output from the style checker will realize only a marginal benefit and at the cost of great inconvenience."
 - Challenges regarding the inexperience of using PHP code review tooking and analyzing the results. With 425,000 lines of code, a manual code review will not be possible with our time constraints. Therefore, we will need to utilize automated tooling to improve our efficiency.
 - Challenges regarding the third-party applications and what vulnerabilities they may add to the Nextcloud platform itself. How can these vulnerabilities be remediated or isolated even when the developers are unwilling to fix them?
 
-_How did our code review strategy attempt to address the anticipated challenges?_:
+_How did our code review strategy attempt to address the anticipated challenges?_  
 The strategy was to break the code into portions that could be reviewed by multiple people. The three apps were also reviewed separately.
 
 By reviewing the scanning results, we could sort the findings by using CWE tags. This helped narrow down the important issues that were found by the scanning tool.
-
+---
 cosmicspork installed and ran the scans for SonarQube and ZAP in his docker containers. He then shared the link so that the group could analyze the results.
 Jim created the markdown file for this assignment, performed the manual code review of the critical portions of the code, analyzed the automated scan findings from the Calendar plug-in, installed a docker container and SonarQube to create the instructions found in Appendix A.
 Dillon analyzed the automated scan findings from the Server code.
 Talbot analyzed the automated scan findings from the Talk plug-in.
-Larissa analyzed the automated scan findings from the Mail plug-in.
+Larissa analyzed the automated scan findings from the Mail plug-in and reported the vulnerability to Nextcloud.
 All contributed to the "Summary of Key Findings" and "Reflections" sections of the assignment.
 
 Thankfully, we ran into no issues during this assignment as our plan-of-attack executed smoothly. We will be conducting one last Zoom meeting to discuss our plans for the Presentation assignment, as well as continuing to discuss any questions through our Discord channel.
@@ -224,13 +225,15 @@ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000
 
 5. In order to perform a scan, the following was needed:
 
-   - Download, from github, the project to scan and save it to a local folder.  In this case the folder was: *C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV*
+- Download, from github, the project to scan and save it to a local folder.  In this case the folder was: *C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV*
 
 ```docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest```
 
-   - Run the following SonarScanner command in powershell:
+- Run the following SonarScanner command in powershell:
 
-```docker run --rm -e SONAR_HOST_URL="http://172.31.144.1:9000/" -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=JimTest1" -e SONAR_LOGIN="sqp_71e6b2ac956b3da33d972f36f5d0f06b6fbb36df" -v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src" sonarsource/sonar-scanner-cli```
+```
+docker run --rm -e SONAR_HOST_URL="http://172.31.144.1:9000/" -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=JimTest1" -e SONAR_LOGIN="sqp_71e6b2ac956b3da33d972f36f5d0f06b6fbb36df" -v "C:\temp\nextcloud\3rdparty\sabre\dav\lib\CalDAV:/usr/src" sonarsource/sonar-scanner-cli
+```
 
 The *project key* and the *SONAR_LOGIN* are both values provided by the SonarQube website when a test project is created.  **Two other important details**:
 

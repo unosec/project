@@ -62,7 +62,7 @@ Similar for SQL injection attacks
 - Prevent unauthorized file read/write access
   - **Nextcloud’s out of the box settings will not suffice to meet standard security controls.**
 - **Nextcloud’s optional anti-virus will need to be configured and enabled to meet standard security controls. Out of the box settings do not automatically enable this feature.**
-- **Nextcloud’s optional server-side file encryption will need to be utilized to meet standard security controls. Out of the box settings to do not automatically enable this feature.**
+- **Nextcloud’s optional server-side file encryption will need to be utilized to meet standard security controls. Out of the box settings do not automatically enable this feature.**
 - Further investigation of the threat to see if it highlights a vulnerability within Nextcloud:
   - Threat 37
     - Potential Process Crash or Stop for Nextcloud
