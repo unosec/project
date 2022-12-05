@@ -194,7 +194,7 @@ _How did our code review strategy attempt to address the anticipated challenges?
 The strategy was to break the code into portions that could be reviewed by multiple people. The three apps were also reviewed separately.
 
 By reviewing the scanning results, we could sort the findings by using CWE tags. This helped narrow down the important issues that were found by the scanning tool.
----
+___
 cosmicspork installed and ran the scans for SonarQube and ZAP in his docker containers. He then shared the link so that the group could analyze the results.
 Jim created the markdown file for this assignment, performed the manual code review of the critical portions of the code, analyzed the automated scan findings from the Calendar plug-in, installed a docker container and SonarQube to create the instructions found in Appendix A.
 Dillon analyzed the automated scan findings from the Server code.
